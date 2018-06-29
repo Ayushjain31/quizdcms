@@ -236,7 +236,7 @@ public class LeaderboardActivity extends AppCompatActivity implements Leaderboar
 
     public List<String> GetAllContest(){
         final IApiCall iApiCall = retrofit.create(IApiCall.class);
-        final Call<List<ContestDTO>> getAllCall = iApiCall.getAllOverall();
+        final Call<List<ContestDTO>> getAllCall = iApiCall.getAllCompleted();
         getAllCall.enqueue(new Callback<List<ContestDTO>>() {
             @Override
             public void onResponse(Call<List<ContestDTO>> call, Response<List<ContestDTO>> response) {

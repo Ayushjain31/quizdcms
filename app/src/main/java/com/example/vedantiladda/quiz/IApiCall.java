@@ -25,6 +25,11 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface IApiCall {
+    @GET("question/approveAll")
+    Call<Boolean>saveEverything();
+
+    @POST("crawler/deleteDataForUrl")
+    Call<Boolean> deleteDataForUrl(@Body UrlDTO urlDTO1);
 
     @POST("/contestQuestion/addQuestions")
     Call<Boolean> addQuestions(@Body List<ContestQuestionDTO> contestQuestionDTOList);
@@ -34,6 +39,9 @@ public interface IApiCall {
 
     @GET("/contest/getAll")
     Call<List<ContestDTO>> getAllOverall();
+
+    @GET("/contest/getAllCompleted")
+    Call<List<ContestDTO>> getAllCompleted();
 
     @GET("/contest/getContestsByType/{contestType}")
     Call<List<ContestDTO>> getAllDynamicContests(@Path("contestType") String contestType);

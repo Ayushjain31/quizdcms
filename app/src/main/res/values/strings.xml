@@ -19,7 +19,7 @@
         <item>dynamic</item>
     </string-array>
     <string name="contest_create_base_url">http://10.177.2.201:8080/contest/</string>
-    <string name="get_categories_base_url">http://10.177.1.100:8080/question/</string>
+    <string name="get_categories_base_url">http://10.177.2.201:8081/question/</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="hello_world">Hello world!</string>
@@ -48,7 +48,7 @@
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
 
-    <string name="base_url_category">http://10.177.1.100:8080/question/</string>
+    <string name="base_url_category">http://10.177.2.201:8081/question/</string>
     <string name="base_url_contest">http://10.177.2.201:8080/</string>
 
     <string name="action_example">Example action</string>

@@ -17,6 +17,15 @@ public class QuestionDTO implements Serializable {
     private String answerType;
     private String status;
     private Boolean checked = false;
+    private String answer;
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
 
     public Boolean getChecked() {
         return checked;

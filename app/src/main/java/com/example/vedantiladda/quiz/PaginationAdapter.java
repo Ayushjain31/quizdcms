@@ -1,6 +1,9 @@
 package com.example.vedantiladda.quiz;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +20,6 @@ public class PaginationAdapter extends RecyclerView.Adapter<PaginationAdapter.Qu
 
     private List<QuestionDTO> questionDTOList;
     private Communicator communicator;
-
 
 
 
@@ -43,6 +45,12 @@ public class PaginationAdapter extends RecyclerView.Adapter<PaginationAdapter.Qu
 
         questionHolder.questionType.setText(questionDTO.getQuestionType());
         questionHolder.questionContent.setText(questionDTO.getQuestionText());
+        questionHolder.optionA.setText("A. "+ questionDTO.getOptionOne());
+        questionHolder.optionB.setText("B. "+questionDTO.getOptionTwo());
+        questionHolder.optionC.setText("C. "+questionDTO.getOptionThree());
+        questionHolder.optionD.setText("D. "+questionDTO.getOptionFour());
+        String answer = questionDTO.getAnswer();
+        questionHolder.answer.setText("Answer: "+answer);
         final String id = questionDTO.getQuestionId();
         questionHolder.select.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -73,11 +81,17 @@ public class PaginationAdapter extends RecyclerView.Adapter<PaginationAdapter.Qu
         public TextView questionContent;
         public TextView questionType;
         public CheckBox select;
+        public TextView optionA, optionB, optionC, optionD, answer;
         public QuestionHolder(@NonNull View itemView) {
             super(itemView);
             questionContent = itemView.findViewById(R.id.questionContent);
             questionType = itemView.findViewById(R.id.questionDifficulty);
             select = itemView.findViewById(R.id.checkBox);
+            optionA = itemView.findViewById(R.id.optionA);
+            optionB = itemView.findViewById(R.id.optionB);
+            optionC = itemView.findViewById(R.id.optionC);
+            optionD = itemView.findViewById(R.id.optionD);
+            answer = itemView.findViewById(R.id.answer);
 
         }
     }
@@ -86,3 +100,4 @@ public class PaginationAdapter extends RecyclerView.Adapter<PaginationAdapter.Qu
     }
 
 }
+

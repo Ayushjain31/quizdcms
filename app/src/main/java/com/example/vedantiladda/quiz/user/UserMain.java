@@ -107,6 +107,7 @@ public class UserMain extends AppCompatActivity
             case R.id.user_logout:
                 SharedPreferences sharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.remove("userId");
                 editor.remove("userName");
                 editor.remove("Role");
                 editor.commit();

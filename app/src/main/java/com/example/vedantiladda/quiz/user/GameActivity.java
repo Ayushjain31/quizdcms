@@ -63,8 +63,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private TextView questionText, skipCountText, questionNumberText;
     private LinearLayout linearLayout;
     private CheckBox optionOne, optionTwo, optionThree, optionFour;
-    private EditText sequenceText;
     private Button beginButton, finishButton;
+    private Button replay;
     private MediaSessionCompat mMediaSession;
     private PlaybackStateCompat.Builder mStateBuilder;
     private VideoView videoView;
@@ -88,6 +88,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private String answerType;
     private String userId;
     private Integer points;
+    private int answered,totalCount;
     private Boolean skipped;
 
     private String testUserId = "testUserId";
@@ -98,13 +99,18 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = findViewById(R.id.toolbar);
+       // setSupportActionBar(toolbar);
         setAllViews();
         requestPermissions();
 
         contestDTO = (ContestDTO)getIntent().getSerializableExtra("contestDTO");
         contestId = contestDTO.getContestId();
+
+        //toolbar.setTitle(contestDTO.getContestName());
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle((CharSequence) contestDTO.getContestName());
 
         SharedPreferences sharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE);
         testUserId = sharedPreferences.getString("userId", " ");
@@ -116,10 +122,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 .client(client)
                 .build();
 
-        contestDTO = (ContestDTO) getIntent().getSerializableExtra("contestDTO");
-        contestId = contestDTO.getContestId();
         contestQuestionDTOList = new ArrayList<>();
-        contestDTO = new ContestDTO();
         contestQuestionDTOList = getAllQuestionsByContest(contestId, false);//contestDTO.getContestId());
 
         mMediaSession = new MediaSessionCompat(this, MEDIA_LOG_TAG);
@@ -131,6 +134,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         skipQuestionFab.setOnClickListener(this);
         beginButton.setOnClickListener(this);
         finishButton.setOnClickListener(this);
+
+        questionNumberText.setVisibility(View.INVISIBLE);
+        nextQuestionFab.setVisibility(View.INVISIBLE);
+        skipQuestionFab.setVisibility(View.INVISIBLE);
     }
 
     void setAllViews(){
@@ -138,7 +145,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         questionText.setMovementMethod(new ScrollingMovementMethod());
         skipCountText = findViewById(R.id.skip_count_text);
         questionNumberText = findViewById(R.id.question_number);
-        questionNumberText.setVisibility(View.GONE);
+
 
         videoView = findViewById(R.id.video);
         imageView = findViewById(R.id.image);
@@ -148,6 +155,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         beginButton = findViewById(R.id.begin_button);
         finishButton = findViewById(R.id.finish_button);
+        replay = findViewById(R.id.replay_button);
 
         linearLayout = findViewById(R.id.linear);
 
@@ -156,7 +164,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         optionThree = findViewById(R.id.option_C);
         optionFour = findViewById(R.id.option_D);
 
-        sequenceText = findViewById(R.id.sequence_answer);
+
 
 
     }
@@ -164,8 +172,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private void showQuestionViews(){
         questionText.setVisibility(View.VISIBLE);
         linearLayout.setVisibility(View.VISIBLE);
-        sequenceText.setVisibility(View.VISIBLE);
-    }
+        optionOne.setChecked(false);
+        optionTwo.setChecked(false);
+        optionThree.setChecked(false);
+        optionFour.setChecked(false);
+   }
 
     private List<ContestQuestionDTO> getAllQuestionsByContest(String contestId, final Boolean flag) {
 
@@ -197,11 +208,21 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
     private void countSkips(){
         skipCount=0;
+        totalCount=0;
+        answered=1;
         for(ContestQuestionDTO contestQuestionDTO : contestQuestionDTOList){
+            totalCount++;
+            questionNumberText.setText(String.valueOf(answered)+"/"+String.valueOf(totalCount));
             if(contestQuestionDTO.getUserAnswerDTO()!=null){
-                if(contestQuestionDTO.getUserAnswerDTO().getSkipped())
+                if(contestQuestionDTO.getUserAnswerDTO().getSkipped()) {
                     skipCount++;
+                    answered++;
+                }
+
+                if(contestQuestionDTO.getUserAnswerDTO().getAnswered())
+                    answered++;
             }
+
         }
         Log.d("SKIPCOUNT", String.valueOf(skipCount));
     }
@@ -213,8 +234,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
       //      Log.d(TAG, "NO MORE QUESTIONS"  + contestQuestionDTO.getQuestionDTO().toString());
             Toast.makeText(GameActivity.this,"No more questions", Toast.LENGTH_SHORT).show();
             linearLayout.setVisibility(View.GONE);
-            sequenceText.setVisibility(View.GONE);
-//            skipQuestionFab.setVisibility(View.INVISIBLE);
+            questionNumberText.setVisibility(View.INVISIBLE);
+            nextQuestionFab.setVisibility(View.INVISIBLE);
+            skipQuestionFab.setVisibility(View.INVISIBLE);
             finishButton.setVisibility(View.VISIBLE);
             return;
         }
@@ -276,17 +298,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 return;
             }
 
-//            if(contestQuestionDTO.getUserAnswerDTO() == null //&& !contestQuestionDTO.getUserAnswerDTO().getSkipped()
-//                    && skipCount <= 2 ){
-//                globalContestQuestionDTO = contestQuestionDTO;
-//                displayQuestion(contestQuestionDTO);
-//                return;
-//            }else if(skipCount == 2 && contestQuestionDTO.getUserAnswerDTO().getSkipped()) {
-//                //display you ran out of skips
-//                globalContestQuestionDTO = contestQuestionDTO;
-//                displayQuestion(contestQuestionDTO);
-//                return;
-//            }
+//
         }
         for(ContestQuestionDTO contestQuestionDTO: contestQuestionDTOList){
             if(contestQuestionDTO.getUserAnswerDTO().getSkipped()){
@@ -305,7 +317,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         StringBuilder answerBuilder = new StringBuilder();
         Boolean flag=false;
         if(answerType.equals("sequence")){
-            return sequenceText.getText().toString().toUpperCase();
+            //Todo: Drag and drop
+            // //return sequenceText.getText().toString().toUpperCase();
         }
         if(optionOne.isChecked()) {
             answerBuilder.append("A");
@@ -345,8 +358,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 imageView.setVisibility(View.INVISIBLE);
                 linearLayout.setVisibility(View.INVISIBLE);
                 questionText.setVisibility(View.INVISIBLE);
+                replay.setVisibility(View.INVISIBLE);
                 UserAnswerDTO userAnswerDTO = new UserAnswerDTO();
 //                userAnswerDTO.getContestQuestionDTO().setContestQuestionId(globalContestQuestionDTO.getContestQuestionId());
+
+                Log.e("CHECK ONE", contestDTO.toString());
+                globalContestQuestionDTO.setContestDTO(contestDTO);
+                Log.e("CHECK TWO", globalContestQuestionDTO.getContestDTO().toString());
+
                 userAnswerDTO.setContestQuestionDTO(globalContestQuestionDTO);
                 if(globalContestQuestionDTO.getUserAnswerDTO()!=null) {
                     if (globalContestQuestionDTO.getUserAnswerDTO().getUserAnswerId() != null) {
@@ -359,13 +378,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 userAnswerDTO.setSkipped(false);
                 userAnswerDTO.setTimeOfAnswer(null);
                 userAnswerDTO.setAnswered(true);
-
+                Log.d("TAG" + "CONTESTDTO", userAnswerDTO.toString());
                 UserApiCall userApiCall = retrofit.create(UserApiCall.class);
                 Call<Boolean> saveAnswer = userApiCall.saveAnswer(userAnswerDTO);
                 saveAnswer.enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                        Log.d(TAG, response.body().toString());
+                      //  Log.d(TAG, response.body().toString());
                         getAllQuestionsByContest(contestId, true);
 
                     }
@@ -383,6 +402,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 imageView.setVisibility(View.INVISIBLE);
                 linearLayout.setVisibility(View.INVISIBLE);
                 questionText.setVisibility(View.INVISIBLE);
+                replay.setVisibility(View.INVISIBLE);
 
                 if(skipCount == 2){
                     Toast.makeText(GameActivity.this,"Skips over",Toast.LENGTH_SHORT).show();
@@ -393,6 +413,12 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                                 Log.d("ERROR",contestQuestionDTO.getUserAnswerDTO().toString());
                                 UserAnswerDTO skipUserAnswerDTO = new UserAnswerDTO();
                                 skipUserAnswerDTO.setUserAnswerId(contestQuestionDTO.getUserAnswerDTO().getUserAnswerId());
+
+
+                                skipUserAnswerDTO.setContestQuestionDTO(contestQuestionDTO);
+                                skipUserAnswerDTO.getContestQuestionDTO().setContestDTO(contestDTO);
+
+
                                 skipUserAnswerDTO.setContestQuestionDTO(contestQuestionDTO);
                                 skipUserAnswerDTO.setAnswer(getSuitableAnswer());
                                 skipUserAnswerDTO.setUserId(testUserId);
@@ -426,6 +452,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 }else if(skipCount < 2) {
                     UserAnswerDTO skipUserAnswerDTO = new UserAnswerDTO();
+                    globalContestQuestionDTO.setContestDTO(contestDTO);
                     skipUserAnswerDTO.setContestQuestionDTO(globalContestQuestionDTO);
                     skipUserAnswerDTO.setAnswer(getSuitableAnswer());
                     if(globalContestQuestionDTO.getUserAnswerDTO()!=null) {
@@ -457,8 +484,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.begin_button:
                 beginButton.setVisibility(View.GONE);
+                questionNumberText.setVisibility(View.VISIBLE);
+                nextQuestionFab.setVisibility(View.VISIBLE);
+                skipQuestionFab.setVisibility(View.VISIBLE);
                 findEligibleQuestion();
-//                displayVideo();
                 break;
 
             case R.id.finish_button:
@@ -497,10 +526,18 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         videoView.setVideoURI(videoUri);
         videoView.requestFocus();
         videoView.start();
+        replay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                videoView.setVisibility(View.VISIBLE);
+                videoView.start();
+            }
+        });
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
                 try {
+                    replay.setVisibility(View.VISIBLE);
                     showQuestionViews();
                     answerType = questionDTO.getAnswerType();
                     questionText.setText(questionDTO.getQuestionText());
@@ -508,7 +545,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                     optionTwo.setText("B: " + questionDTO.getOptionTwo());
                     optionThree.setText("C: " + questionDTO.getOptionThree());
                     optionFour.setText("D: " + questionDTO.getOptionFour());
-                    mediaPlayer.stop();
+                    //mediaPlayer.stop();
                     videoView.setVisibility(View.INVISIBLE);
 
                     //playAudio();
@@ -525,9 +562,17 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mediaPlayer.setDataSource(questionDTO.getQuestionUrl());//"http://www.hubharp.com/web_sound/BachGavotteShort.mp3");
         mediaPlayer.prepare();
         mediaPlayer.start();
+        replay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mediaPlayer.start();
+            }
+        });
+
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
+                replay.setVisibility(View.VISIBLE);
                 showQuestionViews();
                 answerType = questionDTO.getAnswerType();
                 questionText.setText(questionDTO.getQuestionText());
@@ -536,7 +581,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 optionThree.setText("C: " + questionDTO.getOptionThree());
                 optionFour.setText("D: " + questionDTO.getOptionFour());
                 mediaPlayer.stop();
-               // displayImage();
             }
         });
 

@@ -35,7 +35,7 @@ public class ContentScreeningActivity extends AppCompatActivity implements Conte
     RecyclerView rv;
     OkHttpClient client = new OkHttpClient.Builder().build();
     final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://10.177.1.100:8080/")
+            .baseUrl("http://10.177.2.200:8081/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build();
@@ -75,6 +75,36 @@ public class ContentScreeningActivity extends AppCompatActivity implements Conte
                 screenList.clear();
                 Intent i = new Intent(ContentScreeningActivity.this, ContentScreeningActivity.class);
                 startActivity(i);
+                finish();
+            }
+        });
+        Button approveAllButton = findViewById(R.id.approveAll);
+        approveAllButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                IApiCall iApiCall = retrofit.create(IApiCall.class);
+                final Call<Boolean> saveAllCall = iApiCall.saveEverything();
+
+
+                saveAllCall.enqueue(new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+
+                        if(response.body()) {
+                            Toast.makeText(ContentScreeningActivity.this, "success", Toast.LENGTH_LONG).show();
+                            screenList.clear();
+                            Intent i = new Intent(ContentScreeningActivity.this, CrawlActivity.class);
+                            startActivity(i);
+                            finish();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+
+                        Toast.makeText(ContentScreeningActivity.this, "failure", Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
         Button rejectButton = findViewById(R.id.rejectButton);
@@ -92,6 +122,7 @@ public class ContentScreeningActivity extends AppCompatActivity implements Conte
                 screenList.clear();
                 Intent i = new Intent(ContentScreeningActivity.this, ContentScreeningActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -130,7 +161,7 @@ public class ContentScreeningActivity extends AppCompatActivity implements Conte
 
 
 
-                questionList.addAll(response.body());
+                if(response.body()!=null) questionList.addAll(response.body());
                 Log.e("ContentScreening", questionList.get(0).toString());
                 adapter.notifyDataSetChanged();
 
@@ -159,7 +190,7 @@ public class ContentScreeningActivity extends AppCompatActivity implements Conte
 
 
 
-                questionList.addAll(response.body());
+                if(response.body()!=null) questionList.addAll(response.body());
                 Log.e("ContentScreening", questionList.get(0).toString());
                 adapter.notifyDataSetChanged();
                 i++;
@@ -191,3 +222,4 @@ public class ContentScreeningActivity extends AppCompatActivity implements Conte
     }
 
 }
+

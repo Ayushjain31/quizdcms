@@ -38,7 +38,7 @@ public class EasyFragment extends Fragment implements PaginationAdapter.Communic
     private List<QuestionDTO> questionDTOList = new ArrayList<>();
     OkHttpClient client = new OkHttpClient.Builder().build();
     final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://10.177.1.100:8080/")
+            .baseUrl("http://10.177.2.201:8081/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build();
@@ -128,7 +128,7 @@ public class EasyFragment extends Fragment implements PaginationAdapter.Communic
 
 
 
-                questionDTOList.addAll(response.body());
+                if(response.body()!=null) questionDTOList.addAll(response.body());
                 Log.e("EasyFragment", questionDTOList.get(0).toString());
                 adapter.notifyDataSetChanged();
                 Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
@@ -158,7 +158,7 @@ public class EasyFragment extends Fragment implements PaginationAdapter.Communic
         getAllCall.enqueue(new Callback<List<QuestionDTO>>() {
             @Override
             public void onResponse(Call<List<QuestionDTO>> call, Response<List<QuestionDTO>> response) {
-                questionDTOList.addAll(response.body());
+                if(response.body()!=null) questionDTOList.addAll(response.body());
                 adapter.notifyDataSetChanged();
                 i++;
 

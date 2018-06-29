@@ -4,10 +4,10 @@ import java.math.BigInteger;
 
 public class OverallDTO {
     private String userId;
-    private BigInteger overAllPoints;
-
+    private BigInteger finalPoints;
     private BigInteger rank;
     private Integer pointInt;
+    private String finalPointsString;
 
     public String getUserId() {
         return userId;
@@ -17,12 +17,12 @@ public class OverallDTO {
         this.userId = userId;
     }
 
-    public BigInteger getOverAllPoints() {
-        return overAllPoints;
+    public BigInteger getFinalPoints() {
+        return finalPoints;
     }
 
-    public void setOverAllPoints(BigInteger overAllPoints) {
-        this.overAllPoints = overAllPoints;
+    public void setFinalPoints(BigInteger finalPoints) {
+        this.finalPoints = finalPoints;
     }
 
     public BigInteger getRank() {
@@ -41,12 +41,22 @@ public class OverallDTO {
         this.pointInt = pointInt;
     }
 
+    public String getFinalPointsString() {
+        return finalPointsString;
+    }
+
+    public void setFinalPointsString(String finalPointsString) {
+        this.finalPointsString = finalPointsString;
+    }
+
     @Override
     public String toString() {
         return "OverallDTO{" +
                 "userId='" + userId + '\'' +
-                ", overAllPoints=" + overAllPoints +
+                ", finalPoints=" + finalPoints +
                 ", rank=" + rank +
+                ", pointInt=" + pointInt +
+                ", finalPointsString='" + finalPointsString + '\'' +
                 '}';
     }
 }

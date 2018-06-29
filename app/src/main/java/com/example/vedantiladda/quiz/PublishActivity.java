@@ -39,7 +39,7 @@ public class PublishActivity extends AppCompatActivity {
     private Boolean valid = false;
     OkHttpClient client = new OkHttpClient.Builder().build();
     final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://10.177.1.85:8090/")
+            .baseUrl("http://10.177.2.201:8080/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build();

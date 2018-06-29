@@ -43,7 +43,7 @@ public class HardFragment extends Fragment implements PaginationAdapter.Communic
     private List<QuestionDTO> questionDTOList = new ArrayList<>();
         OkHttpClient client = new OkHttpClient.Builder().build();
     final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://10.177.1.100:8080/ ")
+            .baseUrl("http://10.177.2.201:8081/ ")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build();
@@ -124,7 +124,7 @@ public class HardFragment extends Fragment implements PaginationAdapter.Communic
             public void onResponse(Call<List<QuestionDTO>> call, Response<List<QuestionDTO>> response) {
 
 
-                questionDTOList.addAll(response.body());
+                if(response.body()!=null) questionDTOList.addAll(response.body());
                 adapter.notifyDataSetChanged();
 
             }
@@ -153,7 +153,7 @@ public class HardFragment extends Fragment implements PaginationAdapter.Communic
 
                 isLoading = false;
 
-                questionDTOList.addAll(response.body());
+                if(response.body()!=null) questionDTOList.addAll(response.body());
                 adapter.notifyDataSetChanged();
                 i++;
 

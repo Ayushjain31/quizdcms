@@ -212,6 +212,7 @@ public class Navigation_Activity extends AppCompatActivity
         }else if (id == R.id.nav_logout) {
             SharedPreferences sharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.remove("userId");
             editor.remove("userName");
             editor.remove("Role");
 

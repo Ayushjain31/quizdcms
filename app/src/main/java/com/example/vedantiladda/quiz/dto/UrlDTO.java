@@ -14,12 +14,6 @@ public class UrlDTO {
         this.answerType = answerType;
     }
 
-    public UrlDTO(String url, String categoryId, String difficulty, String answerType) {
-        this.url = url;
-        this.categoryId = categoryId;
-        this.difficulty = difficulty;
-        this.answerType = answerType;
-    }
 
     @Override
     public String toString() {

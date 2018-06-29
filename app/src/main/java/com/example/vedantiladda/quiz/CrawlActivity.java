@@ -1,4 +1,3 @@
-
 package com.example.vedantiladda.quiz;
 
 import android.content.Intent;
@@ -28,16 +27,18 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CrawlActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    List<String> category=new ArrayList<>();
-    String[] difficulty={"easy","medium","hard"};
-    String[] answerType={"single","multi","arrange"};
+    List<String> category = new ArrayList<>();
+    String[] difficulty = {"easy", "medium", "hard"};
+    String[] answerType = {"single", "multi", "arrange"};
     ArrayAdapter aa1;
+    private UrlDTO urlDTO;
+    private UrlDTO urlDTO1;
 
     private List<Category> categorieList;
 
     OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
 
-    final Retrofit retrofit = new Retrofit.Builder().baseUrl("http://10.177.2.15:8080/")
+    final Retrofit retrofit = new Retrofit.Builder().baseUrl("http://10.177.2.201:8081/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build();
@@ -46,7 +47,7 @@ public class CrawlActivity extends AppCompatActivity implements AdapterView.OnIt
 //    final Spinner categorySpinner=findViewById(R.id.spinner_category);
 //    final Spinner difficultySpinner=findViewById(R.id.spinner_difficulty);
 //    OkHttpClient okHttpClient1 = new OkHttpClient.Builder().build();
-//    final Retrofit retrofit1 = new Retrofit.Builder().baseUrl("http://10.177.2.15.8080/")
+//    final Retrofit retrofit1 = new Retrofit.Builder().baseUrl("http://10.177.2.201.8081/")
 //            .addConverterFactory(GsonConverterFactory.create())
 //            .client(okHttpClient1)
 //            .build();
@@ -55,8 +56,10 @@ public class CrawlActivity extends AppCompatActivity implements AdapterView.OnIt
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crawl);
+        urlDTO = new UrlDTO();
 
-        Spinner spinner_category= (Spinner) findViewById(R.id.spinner_category);
+
+        Spinner spinner_category = (Spinner) findViewById(R.id.spinner_category);
         spinner_category.setOnItemSelectedListener(this);
 
         aa1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, category);
@@ -66,21 +69,18 @@ public class CrawlActivity extends AppCompatActivity implements AdapterView.OnIt
 
         Spinner spinner_difficulty = (Spinner) findViewById(R.id.spinner_difficulty);
         spinner_difficulty.setOnItemSelectedListener(this);
-        ArrayAdapter aa2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item,difficulty);
+        ArrayAdapter aa2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, difficulty);
         aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_difficulty.setAdapter(aa2);
 
         Spinner spinner_answerType = (Spinner) findViewById(R.id.spinner_answerType);
         spinner_difficulty.setOnItemSelectedListener(this);
-        ArrayAdapter aa3 = new ArrayAdapter(this,android.R.layout.simple_spinner_item,answerType);
+        ArrayAdapter aa3 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, answerType);
         aa3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_answerType.setAdapter(aa3);
 
 
-
-
-
-        categorieList=new ArrayList<>();
+        categorieList = new ArrayList<>();
 
         IApiCall iApiCall = retrofit.create(IApiCall.class);
 
@@ -96,10 +96,9 @@ public class CrawlActivity extends AppCompatActivity implements AdapterView.OnIt
                 Toast.makeText(CrawlActivity.this, "success.....", Toast.LENGTH_LONG).show();
                 //System.out.println("Success...");
                 //System.out.println(response.body());
-                categorieList=response.body();
-                if (categorieList != null && categorieList.size()>0) {
-                    for(Category category:categorieList)
-                    {
+                categorieList = response.body();
+                if (categorieList != null && categorieList.size() > 0) {
+                    for (Category category : categorieList) {
                         categoryList.add(category.getCategoryName());
                         category.getCategoryId();
 
@@ -121,78 +120,155 @@ public class CrawlActivity extends AppCompatActivity implements AdapterView.OnIt
         });
 
 
-
         Button back_button = findViewById(R.id.back_button);
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent;
-                intent = new Intent(CrawlActivity.this,Navigation_Activity.class);
+                intent = new Intent(CrawlActivity.this, Navigation_Activity.class);
                 startActivity(intent);
                 //finish();
             }
 
-        }) ;
+        });
 
 
 //......
-    Button request_button = findViewById(R.id.request_button);
-    request_button.setOnClickListener(new View.OnClickListener() {
+        Button request_button = findViewById(R.id.request_button);
+        request_button.setOnClickListener(new View.OnClickListener() {
 
-        final EditText urlText=findViewById(R.id.editText_url);
-        final Spinner categorySpinner=findViewById(R.id.spinner_category);
-        final Spinner difficultySpinner=findViewById(R.id.spinner_difficulty);
-        final Spinner answerTypeSpinner=findViewById(R.id.spinner_answerType);
-        OkHttpClient okHttpClient1 = new OkHttpClient.Builder().build();
-        final Retrofit retrofit1 = new Retrofit.Builder().baseUrl("http://10.177.2.196:8080/")
-        .addConverterFactory(GsonConverterFactory.create())
-        .client(okHttpClient1)
-        .build();
 
-        @Override
-        public void onClick(View view) {
+            OkHttpClient okHttpClient1 = new OkHttpClient.Builder().build();
+            final Retrofit retrofit1 = new Retrofit.Builder().baseUrl("http://10.177.2.196:8080")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(okHttpClient1)
+                    .build();
 
-            String url=urlText.getText().toString();
-            String category=categorySpinner.getSelectedItem().toString();
-            String difficulty=difficultySpinner.getSelectedItem().toString();
-            String answerType=answerTypeSpinner.getSelectedItem().toString();
-            String categoryId=new String();
-            for(Category object:categorieList){
-                    if(object.getCategoryName().equals(category)){
-                        categoryId=object.getCategoryId();
-                        break;
+            @Override
+            public void onClick(View view) {
+                EditText urlText = findViewById(R.id.editText_url);
+                Spinner categorySpinner = findViewById(R.id.spinner_category);
+                Spinner difficultySpinner = findViewById(R.id.spinner_difficulty);
+                Spinner answerTypeSpinner = findViewById(R.id.spinner_answerType);
+
+                String url = urlText.getText().toString();
+                String categoryName = categorySpinner.getSelectedItem().toString();
+                String difficulty = difficultySpinner.getSelectedItem().toString();
+                String answerType = answerTypeSpinner.getSelectedItem().toString();
+
+                String categoryId = "";
+                for (Category category1 : categorieList) {
+                    //System.out.println("inside for");
+                    if (category1.getCategoryName().equals(categoryName)) {
+                        categoryId = category1.getCategoryId();
+                        System.out.println("inside if");
+                        //  break;
                     }
+                }
+                urlDTO.setUrl(url);
+                urlDTO.setCategoryId(categoryId);
+                urlDTO.setAnswerType(answerType);
+                urlDTO.setDifficulty(difficulty);
+                System.out.println(urlDTO);
+
+                IApiCall iApiCall = retrofit1.create(IApiCall.class);
+
+                Call<Boolean> crawl = iApiCall.crawl(urlDTO);
+
+                crawl.enqueue(new Callback<Boolean>() {
+
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+
+                        if (response.body()) {
+
+
+                            Toast.makeText(CrawlActivity.this, "crawl request accepted", Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(CrawlActivity.this, ContentScreeningActivity.class);
+                            startActivity(i);
+
+                        }
+                        else
+                        {
+                            Toast.makeText(CrawlActivity.this, "website is not accepted", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+
+                        Toast.makeText(CrawlActivity.this, "fail to crawl", Toast.LENGTH_SHORT).show();
+
+                    }
+
+                });
+
             }
 
+        });
 
+        Button delete = (Button) findViewById(R.id.delete_button);
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                urlDTO1 = new UrlDTO();
 
-            UrlDTO urlDTO=new UrlDTO(url,categoryId,difficulty,answerType);
+                final Retrofit retrofit2 = new Retrofit.Builder().baseUrl("http://10.177.2.196:8080/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .client(okHttpClient)
+                        .build();
+                EditText urlText = findViewById(R.id.editText_url);
+                Spinner categorySpinner = findViewById(R.id.spinner_category);
+                Spinner difficultySpinner = findViewById(R.id.spinner_difficulty);
+                Spinner answerTypeSpinner = findViewById(R.id.spinner_answerType);
 
-            IApiCall iApiCall = retrofit1.create(IApiCall.class);
-
-            final Call<Boolean> crawl = iApiCall.crawl(urlDTO);
-
-            crawl.enqueue(new Callback<Boolean>() {
-
-                @Override
-                public void onResponse(Call<Boolean> call, Response<Boolean> response){
-
-                        Toast.makeText(CrawlActivity.this, "success.....", Toast.LENGTH_LONG).show();
-
+                String url = urlText.getText().toString();
+                String category = categorySpinner.getSelectedItem().toString();
+                String difficulty = difficultySpinner.getSelectedItem().toString();
+                String answerType = answerTypeSpinner.getSelectedItem().toString();
+                String categoryId = "";
+                for (Category object : categorieList) {
+                    if (object.getCategoryName().equals(category)) {
+                        categoryId = object.getCategoryId();
+                        break;
+                    }
                 }
-                @Override
-                public void onFailure(Call<Boolean> call, Throwable t) {
 
-                    Toast.makeText(CrawlActivity.this, "failure......", Toast.LENGTH_LONG).show();
+                urlDTO1.setDifficulty(difficulty);
+                urlDTO1.setAnswerType(answerType);
+                urlDTO1.setUrl(url);
+                urlDTO1.setCategoryId(categoryId);
+                System.out.println(urlDTO1);
 
-                }
+                IApiCall iApiCall1 = retrofit2.create(IApiCall.class);
 
-            });
-        }
-    });
+                Call<Boolean> deleteUrl = iApiCall1.deleteDataForUrl(urlDTO1);
+                deleteUrl.enqueue(new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                        if (response.body()) {
+                            Toast.makeText(CrawlActivity.this, "Successfully Deleted", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            Toast.makeText(CrawlActivity.this, "null ", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+
+                        Toast.makeText(CrawlActivity.this, "Fail to Delete", Toast.LENGTH_SHORT).show();
+
+
+                    }
+                });
+
+
+            }
+        });
+
 
     }
-
 
 
 //.....
@@ -207,3 +283,4 @@ public class CrawlActivity extends AppCompatActivity implements AdapterView.OnIt
 
     }
 }
+

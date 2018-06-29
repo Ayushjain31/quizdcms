@@ -49,7 +49,7 @@ public class ContestRulesActivity extends AppCompatActivity {
         numberOfEasyQuestions=(EditText)findViewById(R.id.noeq_id);
         numberOfMediumQuestions=(EditText)findViewById(R.id.nomq_id);
         numberOfDifficultQuestions=(EditText)findViewById(R.id.nodq_id);
-        retrofit = new Retrofit.Builder().baseUrl("http://10.177.1.85:8090").addConverterFactory(GsonConverterFactory.create()).client(client).build();
+        retrofit = new Retrofit.Builder().baseUrl("http://10.177.2.201:8080").addConverterFactory(GsonConverterFactory.create()).client(client).build();
         IApiCall iApiCall=retrofit.create(IApiCall.class);
         Call<ContestRulesDTO> getAllCall=iApiCall.getRules();
         getAllCall.enqueue(new Callback<ContestRulesDTO>() {

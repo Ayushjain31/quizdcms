@@ -17,6 +17,7 @@ public interface UserApiCall {
     @GET("category/getAll")
     Call<List<CategoryDTO>> getCategoryForContest();
 
+
     @GET("contest/getContestsByCategory/{categoryId}")
     Call<List<ContestDTO>> getContestsByCategory(@Path("categoryId")String categoryId);
 
