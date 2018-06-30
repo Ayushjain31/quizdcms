@@ -22,9 +22,13 @@ import com.example.vedantiladda.quiz.R;
 import com.example.vedantiladda.quiz.login.LoginActivity;
 import com.example.vedantiladda.quiz.user.Leaderboard;
 import com.example.vedantiladda.quiz.user.UserContests;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class UserMain extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    SharedPreferences sharedPreferencesForFCM;
+    SharedPreferences.Editor editorForFCM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,11 @@ public class UserMain extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        FirebaseMessaging.getInstance().subscribeToTopic("user");
+//        sharedPreferencesForFCM = getSharedPreferences(getString(R.string.shared_pref_fcm_file),Context.MODE_PRIVATE);
+//        editorForFCM = sharedPreferencesForFCM.edit();
+//        editorForFCM =
+//
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -44,6 +53,11 @@ public class UserMain extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         displaySelectedScreen(R.id.nav_contests);
+
+        FirebaseMessaging.getInstance().unsubscribeFromTopic("quizMaster");
+
+
+
     }
 
     @Override
@@ -111,6 +125,9 @@ public class UserMain extends AppCompatActivity
                 editor.remove("userName");
                 editor.remove("Role");
                 editor.commit();
+
+                FirebaseMessaging.getInstance().unsubscribeFromTopic("user");
+
                 Toast.makeText(getApplicationContext(),"Succesfully logged out!",Toast.LENGTH_SHORT).show();
 
                 //Put the updated launcher activity here

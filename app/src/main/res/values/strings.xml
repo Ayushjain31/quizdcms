@@ -50,6 +50,7 @@
 
     <string name="base_url_category">http://10.177.2.201:8081/question/</string>
     <string name="base_url_contest">http://10.177.2.201:8080/</string>
+    <string name="shared_pref_fcm_file">fcm_file</string>
 
     <string name="action_example">Example action</string>
     <string name="title_activity_contest_names">ContestNames</string>

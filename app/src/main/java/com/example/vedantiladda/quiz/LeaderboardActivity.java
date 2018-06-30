@@ -72,9 +72,6 @@ public class LeaderboardActivity extends AppCompatActivity implements Leaderboar
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
 
-
-
-
         contestListButton = findViewById(R.id.contest_list_button);
         initContestListButton();
         GetAllContest();
@@ -89,34 +86,6 @@ public class LeaderboardActivity extends AppCompatActivity implements Leaderboar
 
         mAdapter = new LeaderboardAdapter(overallDTOS, LeaderboardActivity.this);
         mAdapter1 = new LeaderboardAdapter1(contestwiseDTOS, LeaderboardActivity.this);
-
-
-
-       // mAdapter.notifyDataSetChanged();
-        //mAdapter1.notifyDataSetChanged();
-
-//        UserDTO userDTO1 = new UserDTO();
-//        UserDTO userDTO2 = new UserDTO();
-//        userDTO1.setUserName("username1");
-//        userDTO2.setUserName("username2");
-//        userDTOS.add(userDTO1);
-//        userDTOS.add(userDTO2);
-
-
-
-
-
-//        final ImageView Back = (ImageView) findViewById(R.id.back);
-//        Back.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(LeaderboardActivity.this,Navigation_Activity.class);
-//                startActivity(i);
-//                finish();
-//
-//            }
-//        });
-
 
     }
     private void initContestListButton()
@@ -202,13 +171,16 @@ public class LeaderboardActivity extends AppCompatActivity implements Leaderboar
                     mAdapter1.notifyDataSetChanged();
                     Toast.makeText(LeaderboardActivity.this, "received", Toast.LENGTH_LONG).show();
                 }catch (Exception e){
-                    Log.e("LEADERBOARD", e.getMessage());
+                    Toast.makeText(LeaderboardActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+                    Log.e("LEADER BOARD CRASH",e.getMessage());
+
                 }
             }
 
             @Override
             public void onFailure(Call<List<ContestwiseDTO>> call, Throwable t) {
                 Toast.makeText(LeaderboardActivity.this, "failed", Toast.LENGTH_LONG).show();
+
 
             }
 
@@ -229,7 +201,8 @@ public class LeaderboardActivity extends AppCompatActivity implements Leaderboar
                     mAdapter.notifyDataSetChanged();
                     Toast.makeText(LeaderboardActivity.this, "received", Toast.LENGTH_LONG).show();
                 }catch (Exception e){
-                    Log.e("LEADERBOARD", e.getMessage());
+                    Toast.makeText(LeaderboardActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+                    Log.e("LEADER BOARD CRASH",e.getMessage());
                 }
             }
 

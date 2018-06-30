@@ -55,6 +55,22 @@
         <activity android:name=".PublishActivity" />
         <activity android:name=".ContentScreeningActivity"/>
         <activity android:name=".QuestionBankActivity" />
+        <activity android:name=".QuizMaster.QuizMasterActivity"/>
+        <activity android:name=".QuizMaster.QuizMaterContestActivity"/>
+
+        <service android:name=".firebaseservice.TokenManager">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".firebaseservice.FCMreceiver">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+
 
     </application>
 

@@ -9,12 +9,12 @@ public class OverallDTO {
     private Integer pointInt;
     private String finalPointsString;
 
-    public String getUserId() {
-        return userId;
+    public String getFinalPointsString() {
+        return finalPointsString;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setFinalPointsString(String finalPointsString) {
+        this.finalPointsString = finalPointsString;
     }
 
     public BigInteger getFinalPoints() {
@@ -23,6 +23,15 @@ public class OverallDTO {
 
     public void setFinalPoints(BigInteger finalPoints) {
         this.finalPoints = finalPoints;
+
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public BigInteger getRank() {
@@ -39,24 +48,5 @@ public class OverallDTO {
 
     public void setPointInt(Integer pointInt) {
         this.pointInt = pointInt;
-    }
-
-    public String getFinalPointsString() {
-        return finalPointsString;
-    }
-
-    public void setFinalPointsString(String finalPointsString) {
-        this.finalPointsString = finalPointsString;
-    }
-
-    @Override
-    public String toString() {
-        return "OverallDTO{" +
-                "userId='" + userId + '\'' +
-                ", finalPoints=" + finalPoints +
-                ", rank=" + rank +
-                ", pointInt=" + pointInt +
-                ", finalPointsString='" + finalPointsString + '\'' +
-                '}';
     }
 }

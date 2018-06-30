@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 
 import com.example.vedantiladda.quiz.Navigation_Activity;
+import com.example.vedantiladda.quiz.QuizMaster.QuizMasterActivity;
 import com.example.vedantiladda.quiz.R;
 import com.example.vedantiladda.quiz.dto.UserDTO;
 import com.example.vedantiladda.quiz.dto.UserLogin;
@@ -78,6 +79,11 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
 
+        }else if(sharedPreferences.getString("Role","ds").equals("QuizMaster")){
+            Intent intent = new Intent(this,QuizMasterActivity.class);
+            startActivity(intent);
+            finish();
+
         }
 
         Button login_button = findViewById(R.id.login_button);
@@ -135,11 +141,12 @@ public class LoginActivity extends AppCompatActivity {
                             else if(username.get(2).equals("User")){
                                 Intent i = new Intent(LoginActivity.this, UserMain.class);
                                 startActivity(i);
-                                finish();}
-//                                else if(username.get(1).equals("QuizMaster")){
-//                                Intent i = new Intent(LoginActivity.this, QuizMasterActivity.class);
-//                                startActivity(i);
-//                                finish();}
+                                finish();
+                            }else if(username.get(2).equals("QuizMaster")){
+                                Intent i = new Intent(LoginActivity.this, QuizMasterActivity.class);
+                                startActivity(i);
+                                finish();
+                            }
 
                         }
 

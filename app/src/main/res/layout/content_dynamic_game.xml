@@ -93,20 +93,21 @@
 
     </LinearLayout>
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/dynamic_linear"
-        android:layout_alignParentEnd="true"
-        android:hint="Enter the Sequence"
-        android:id="@+id/dynamic_sequence_answer"
-        android:visibility="invisible"/>
+        android:layout_centerInParent="true"
+        android:text="Please Wait..."
+        android:id="@+id/please_wait"/>
+
+
+
 
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/dynamic_sequence_answer"
+        android:layout_below="@+id/dynamic_linear"
         android:text="submit"
         android:id="@+id/submit_button"
         android:layout_centerInParent="true"
