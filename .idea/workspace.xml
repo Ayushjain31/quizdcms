@@ -15,79 +15,21 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customview_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customview_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_loader_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_loader_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_print_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_print_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0_alpha3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0_alpha3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0_alpha3.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/CategoryWindowOnItemSelectListner.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContentScreeningActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContentScreeningActivity.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContestCreationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContestCreationActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContestRulesActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContestRulesActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/CrawlActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/CrawlActivity.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/EasyFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/EasyFragment.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/HardFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/HardFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/IApiCall.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/IApiCall.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardActivity.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardAdapter.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/MediumFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/MediumFragment.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/Navigation_Activity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/Navigation_Activity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/PaginationAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/PaginationAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/PublishActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/PublishActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/dto/OverallDTO.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/dto/OverallDTO.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/dto/QuestionDTO.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/dto/QuestionDTO.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/dto/UrlDTO.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/dto/UrlDTO.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/login/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/login/LoginActivity.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/user/GameActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/user/GameActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/user/UserApiCall.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/user/UserApiCall.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/user/UserMain.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/user/UserMain.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_content_screening.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_content_screening.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_crawl.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_crawl.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_game.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_game.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_navigation_.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_navigation_.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/create_contest_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/create_contest_layout.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/question_holder.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/question_holder.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -103,41 +45,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="IApiCall.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/IApiCall.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContentScreeningActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ContentScreeningActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContentScreeningActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="97" column="37" lean-forward="true" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
+            <state relative-caret-position="258">
+              <caret line="145" column="25" lean-forward="false" selection-start-line="145" selection-start-column="25" selection-end-line="145" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1997#2155#0" expanded="true" />
-                <element signature="e#2154#2155#0" expanded="true" />
-                <element signature="e#2265#2945#0" expanded="true" />
-                <element signature="e#2944#2945#0" expanded="true" />
-                <element signature="e#3057#4209#0" expanded="true" />
-                <element signature="e#4208#4209#0" expanded="true" />
-                <element signature="e#4315#4993#0" expanded="true" />
-                <element signature="e#4992#4993#0" expanded="true" />
+                <element signature="e#2024#2182#0" expanded="true" />
+                <element signature="e#2181#2182#0" expanded="true" />
+                <element signature="e#2292#3175#0" expanded="true" />
+                <element signature="e#2829#3142#0" expanded="true" />
+                <element signature="e#3141#3142#0" expanded="true" />
+                <element signature="e#3174#3175#0" expanded="true" />
+                <element signature="e#3287#4713#0" expanded="true" />
+                <element signature="e#3976#4373#0" expanded="true" />
+                <element signature="e#4372#4373#0" expanded="true" />
+                <element signature="e#4712#4713#0" expanded="true" />
+                <element signature="e#4819#5699#0" expanded="true" />
+                <element signature="e#5354#5667#0" expanded="true" />
+                <element signature="e#5666#5667#0" expanded="true" />
+                <element signature="e#5698#5699#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeaderboardAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardAdapter.java">
+      <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/login/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="40" column="70" lean-forward="false" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="70" />
+            <state relative-caret-position="1395">
+              <caret line="123" column="60" lean-forward="false" selection-start-line="123" selection-start-column="60" selection-end-line="123" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Navigation_Activity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/Navigation_Activity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="193" column="69" lean-forward="false" selection-start-line="193" selection-start-column="69" selection-end-line="193" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -146,31 +94,58 @@
       <file leaf-file-name="ContestCreationActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContestCreationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="98" column="38" lean-forward="false" selection-start-line="98" selection-start-column="38" selection-end-line="98" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2240#2474#0" expanded="true" />
-                <element signature="e#2473#2474#0" expanded="true" />
-                <element signature="e#2561#2795#0" expanded="true" />
-                <element signature="e#2794#2795#0" expanded="true" />
-                <element signature="e#4486#4529#0" expanded="true" />
-                <element signature="e#5916#6817#0" expanded="true" />
-                <element signature="e#6383#6681#0" expanded="true" />
-                <element signature="e#6680#6681#0" expanded="true" />
-                <element signature="e#6816#6817#0" expanded="true" />
-                <element signature="e#8985#10199#0" expanded="true" />
-                <element signature="e#10198#10199#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="648">
+              <caret line="294" column="30" lean-forward="false" selection-start-line="294" selection-start-column="30" selection-end-line="294" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <file leaf-file-name="PublishActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/PublishActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="51" column="53" lean-forward="false" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
+            <state relative-caret-position="726">
+              <caret line="87" column="13" lean-forward="false" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeaderboardActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="242" column="0" lean-forward="false" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeaderboardAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeaderboardAdapter1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardAdapter1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-246">
+              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostAll.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/login/PostAll.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -179,63 +154,17 @@
       <file leaf-file-name="GameActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/user/GameActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="843">
-              <caret line="583" column="13" lean-forward="false" selection-start-line="583" selection-start-column="13" selection-end-line="583" selection-end-column="13" />
+            <state relative-caret-position="-1956">
+              <caret line="405" column="54" lean-forward="false" selection-start-line="405" selection-start-column="54" selection-end-line="405" selection-end-column="54" />
               <folding>
                 <element signature="e#4360#4396#0" expanded="true" />
                 <element signature="method#showQuestionViews#0;class#GameActivity#0" expanded="false" />
                 <element signature="method#getSuitableAnswer#0;class#GameActivity#0" expanded="false" />
-                <element signature="e#21651#21860#0" expanded="true" />
-                <element signature="e#21859#21860#0" expanded="true" />
-                <element signature="e#21905#22853#0" expanded="true" />
-                <element signature="e#22852#22853#0" expanded="true" />
-                <element signature="e#23202#23358#0" expanded="true" />
-                <element signature="e#23357#23358#0" expanded="true" />
-                <element signature="e#23406#24098#0" expanded="true" />
+                <element signature="e#22289#23141#0" expanded="true" />
+                <element signature="e#23140#23141#0" expanded="true" />
+                <element signature="e#23546#24238#0" expanded="true" />
+                <element signature="e#24237#24238#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_content_screening.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_content_screening.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="63" column="46" lean-forward="false" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EasyFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/EasyFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="40" column="41" lean-forward="false" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HardFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/HardFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="45" column="41" lean-forward="false" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MediumFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/MediumFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="44" column="42" lean-forward="false" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -257,9 +186,12 @@
       <find>point</find>
       <find>ans</find>
       <find>answered</find>
-      <find>10.177.2.200</find>
-      <find>10.177.2.201</find>
       <find>playAud</find>
+      <find>10.177.2.20</find>
+      <find>10.177.2.201</find>
+      <find>10.177.2.196</find>
+      <find>playAudio</find>
+      <find>10.177.2.200</find>
     </findStrings>
     <replaceStrings>
       <replace>10.177.2.200</replace>
@@ -2285,16 +2217,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContestRulesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/user/UserMain.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/Navigation_Activity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/login/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/PublishActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/user/UserApiCall.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/dto/OverallDTO.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_game.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/create_contest_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/PaginationAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/question_holder.xml" />
@@ -2303,15 +2228,22 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/dto/UrlDTO.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/CrawlActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_navigation_.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/EasyFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/HardFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/MediumFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContestCreationActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/user/GameActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_content_screening.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/IApiCall.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/HardFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/MediumFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContestRulesActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/EasyFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_game.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContentScreeningActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/Navigation_Activity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContestCreationActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/PublishActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/user/GameActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/login/LoginActivity.java" />
       </list>
     </option>
   </component>
@@ -2406,11 +2338,12 @@
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="ZY2244FN8W" />
+    <property name="device.picker.selection" value="5172a353" />
     <property name="DEBUGGABLE_DEVICE" value="motorola-moto_g__5__plus-ZY2244FN8W" />
     <property name="DEBUGGABLE_PROCESS" value="com.example.vedantiladda.quiz" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="DEBUGGER_ID" value="Auto" />
+    <property name="SearchEverywhereHistoryKey" value="GameAc&#9;FILE&#9;file:///Users/ayush/Documents/GitHub/quizdcms/app/src/main/java/com/example/vedantiladda/quiz/user/GameActivity.java&#10;content&#9;FILE&#9;file:///Users/ayush/Documents/GitHub/quizdcms/app/src/main/res/layout/content_game.xml&#10;content_game&#9;FILE&#9;file:///Users/ayush/Documents/GitHub/quizdcms/app/src/main/res/layout/content_game.xml" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -2574,6 +2507,14 @@
       <option name="presentableId" value="Default" />
       <updated>1530209291042</updated>
     </task>
+    <task id="LOCAL-00001" summary="Fianl@7:25">
+      <created>1530280572290</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1530280572290</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2615,47 +2556,24 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fianl@7:25" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fianl@7:25" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="5" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContestRulesActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="51" column="75" lean-forward="false" selection-start-line="51" selection-start-column="75" selection-end-line="51" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/user/UserMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="109" column="40" lean-forward="false" selection-start-line="109" selection-start-column="40" selection-end-line="109" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/Navigation_Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="214" column="36" lean-forward="false" selection-start-line="214" selection-start-column="36" selection-end-line="214" selection-end-column="36" />
-          <folding>
-            <element signature="e#3331#3362#0" expanded="false" />
-            <element signature="e#3364#3396#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/login/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-726">
-          <caret line="76" column="63" lean-forward="false" selection-start-line="76" selection-start-column="63" selection-end-line="76" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -2719,14 +2637,6 @@
             <element signature="e#918#919#0" expanded="false" />
             <element signature="e#958#959#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/PublishActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-826">
-          <caret line="41" column="46" lean-forward="false" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2816,14 +2726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/3564ebef90ac75e61ed65ab9af0f422ce92d4afa/retrofit-2.1.0-sources.jar!/retrofit2/Callback.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -2862,17 +2764,6 @@
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_game.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2424">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
@@ -3018,78 +2909,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/EasyFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="40" column="41" lean-forward="false" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/HardFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="45" column="41" lean-forward="false" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/MediumFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="44" column="42" lean-forward="false" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContestCreationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="98" column="38" lean-forward="false" selection-start-line="98" selection-start-column="38" selection-end-line="98" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2240#2474#0" expanded="true" />
-            <element signature="e#2473#2474#0" expanded="true" />
-            <element signature="e#2561#2795#0" expanded="true" />
-            <element signature="e#2794#2795#0" expanded="true" />
-            <element signature="e#4486#4529#0" expanded="true" />
-            <element signature="e#5916#6817#0" expanded="true" />
-            <element signature="e#6383#6681#0" expanded="true" />
-            <element signature="e#6680#6681#0" expanded="true" />
-            <element signature="e#6816#6817#0" expanded="true" />
-            <element signature="e#8985#10199#0" expanded="true" />
-            <element signature="e#10198#10199#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="51" column="53" lean-forward="false" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/user/GameActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="843">
-          <caret line="583" column="13" lean-forward="false" selection-start-line="583" selection-start-column="13" selection-end-line="583" selection-end-column="13" />
-          <folding>
-            <element signature="e#4360#4396#0" expanded="true" />
-            <element signature="method#showQuestionViews#0;class#GameActivity#0" expanded="false" />
-            <element signature="method#getSuitableAnswer#0;class#GameActivity#0" expanded="false" />
-            <element signature="e#21651#21860#0" expanded="true" />
-            <element signature="e#21859#21860#0" expanded="true" />
-            <element signature="e#21905#22853#0" expanded="true" />
-            <element signature="e#22852#22853#0" expanded="true" />
-            <element signature="e#23202#23358#0" expanded="true" />
-            <element signature="e#23357#23358#0" expanded="true" />
-            <element signature="e#23406#24098#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_content_screening.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -3109,29 +2928,166 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/HardFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="40" column="70" lean-forward="false" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="70" />
+        <state relative-caret-position="114">
+          <caret line="160" column="16" lean-forward="false" selection-start-line="160" selection-start-column="16" selection-end-line="167" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/MediumFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="133" column="17" lean-forward="false" selection-start-line="133" selection-start-column="17" selection-end-line="133" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContestRulesActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="51" column="70" lean-forward="false" selection-start-line="51" selection-start-column="70" selection-end-line="51" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/EasyFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="20" column="50" lean-forward="false" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_game.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="30" column="36" lean-forward="false" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContentScreeningActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="97" column="37" lean-forward="true" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
+        <state relative-caret-position="258">
+          <caret line="145" column="25" lean-forward="false" selection-start-line="145" selection-start-column="25" selection-end-line="145" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1997#2155#0" expanded="true" />
-            <element signature="e#2154#2155#0" expanded="true" />
-            <element signature="e#2265#2945#0" expanded="true" />
-            <element signature="e#2944#2945#0" expanded="true" />
-            <element signature="e#3057#4209#0" expanded="true" />
-            <element signature="e#4208#4209#0" expanded="true" />
-            <element signature="e#4315#4993#0" expanded="true" />
-            <element signature="e#4992#4993#0" expanded="true" />
+            <element signature="e#2024#2182#0" expanded="true" />
+            <element signature="e#2181#2182#0" expanded="true" />
+            <element signature="e#2292#3175#0" expanded="true" />
+            <element signature="e#2829#3142#0" expanded="true" />
+            <element signature="e#3141#3142#0" expanded="true" />
+            <element signature="e#3174#3175#0" expanded="true" />
+            <element signature="e#3287#4713#0" expanded="true" />
+            <element signature="e#3976#4373#0" expanded="true" />
+            <element signature="e#4372#4373#0" expanded="true" />
+            <element signature="e#4712#4713#0" expanded="true" />
+            <element signature="e#4819#5699#0" expanded="true" />
+            <element signature="e#5354#5667#0" expanded="true" />
+            <element signature="e#5666#5667#0" expanded="true" />
+            <element signature="e#5698#5699#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/dto/UserLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/login/PostAll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/Navigation_Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="193" column="69" lean-forward="false" selection-start-line="193" selection-start-column="69" selection-end-line="193" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/ContestCreationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="294" column="30" lean-forward="false" selection-start-line="294" selection-start-column="30" selection-end-line="294" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/PublishActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="87" column="13" lean-forward="false" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardAdapter1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-246">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/user/GameActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1956">
+          <caret line="405" column="54" lean-forward="false" selection-start-line="405" selection-start-column="54" selection-end-line="405" selection-end-column="54" />
+          <folding>
+            <element signature="e#4360#4396#0" expanded="true" />
+            <element signature="method#showQuestionViews#0;class#GameActivity#0" expanded="false" />
+            <element signature="method#getSuitableAnswer#0;class#GameActivity#0" expanded="false" />
+            <element signature="e#22289#23141#0" expanded="true" />
+            <element signature="e#23140#23141#0" expanded="true" />
+            <element signature="e#23546#24238#0" expanded="true" />
+            <element signature="e#24237#24238#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/LeaderboardActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="242" column="0" lean-forward="false" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/vedantiladda/quiz/login/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="123" column="60" lean-forward="false" selection-start-line="123" selection-start-column="60" selection-end-line="123" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -128,10 +128,13 @@ public class EasyFragment extends Fragment implements PaginationAdapter.Communic
 
 
 
-                if(response.body()!=null) questionDTOList.addAll(response.body());
+                if(response.body().size()>0) {questionDTOList.addAll(response.body());
                 Log.e("EasyFragment", questionDTOList.get(0).toString());
                 adapter.notifyDataSetChanged();
-                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();}
+                else{
+                    Toast.makeText(getActivity(), "no questions", Toast.LENGTH_LONG).show();
+                }
             }
 
             @Override
@@ -158,9 +161,15 @@ public class EasyFragment extends Fragment implements PaginationAdapter.Communic
         getAllCall.enqueue(new Callback<List<QuestionDTO>>() {
             @Override
             public void onResponse(Call<List<QuestionDTO>> call, Response<List<QuestionDTO>> response) {
-                if(response.body()!=null) questionDTOList.addAll(response.body());
-                adapter.notifyDataSetChanged();
-                i++;
+                if(response.body().size()>0) {
+                    questionDTOList.addAll(response.body());
+                    adapter.notifyDataSetChanged();
+                    i++;
+                }
+                else{
+                    Toast.makeText(getActivity(), "no questions", Toast.LENGTH_LONG).show();
+                }
+
 
             }
 

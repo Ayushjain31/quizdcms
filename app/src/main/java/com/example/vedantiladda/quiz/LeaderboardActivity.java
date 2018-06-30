@@ -195,11 +195,15 @@ public class LeaderboardActivity extends AppCompatActivity implements Leaderboar
         getContestWiseCall.enqueue(new Callback<List<ContestwiseDTO>>() {
             @Override
             public void onResponse(Call<List<ContestwiseDTO>> call, Response<List<ContestwiseDTO>> response) {
-                mRecyclerView.setAdapter(mAdapter1);
-                contestwiseDTOS.clear();
-                contestwiseDTOS.addAll(response.body());
-                mAdapter1.notifyDataSetChanged();
-                Toast.makeText(LeaderboardActivity.this, "received", Toast.LENGTH_LONG).show();
+                try {
+                    mRecyclerView.setAdapter(mAdapter1);
+                    contestwiseDTOS.clear();
+                    contestwiseDTOS.addAll(response.body());
+                    mAdapter1.notifyDataSetChanged();
+                    Toast.makeText(LeaderboardActivity.this, "received", Toast.LENGTH_LONG).show();
+                }catch (Exception e){
+                    Log.e("LEADERBOARD", e.getMessage());
+                }
             }
 
             @Override
@@ -218,11 +222,15 @@ public class LeaderboardActivity extends AppCompatActivity implements Leaderboar
         getAllCall.enqueue(new Callback<List<OverallDTO>>() {
             @Override
             public void onResponse(Call<List<OverallDTO>> call, Response<List<OverallDTO>> response) {
-                mRecyclerView.setAdapter(mAdapter);
-                overallDTOS.clear();
-                overallDTOS.addAll(response.body());
-                mAdapter.notifyDataSetChanged();
-                Toast.makeText(LeaderboardActivity.this, "received", Toast.LENGTH_LONG).show();
+                try {
+                    mRecyclerView.setAdapter(mAdapter);
+                    overallDTOS.clear();
+                    overallDTOS.addAll(response.body());
+                    mAdapter.notifyDataSetChanged();
+                    Toast.makeText(LeaderboardActivity.this, "received", Toast.LENGTH_LONG).show();
+                }catch (Exception e){
+                    Log.e("LEADERBOARD", e.getMessage());
+                }
             }
 
             @Override
@@ -232,6 +240,7 @@ public class LeaderboardActivity extends AppCompatActivity implements Leaderboar
             }
 
         });
+
     }
 
     public List<String> GetAllContest(){

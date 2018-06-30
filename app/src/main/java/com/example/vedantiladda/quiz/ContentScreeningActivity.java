@@ -1,6 +1,7 @@
 package com.example.vedantiladda.quiz;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -35,7 +36,7 @@ public class ContentScreeningActivity extends AppCompatActivity implements Conte
     RecyclerView rv;
     OkHttpClient client = new OkHttpClient.Builder().build();
     final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://10.177.2.200:8081/")
+            .baseUrl("http://10.177.2.201:8081/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build();
@@ -73,9 +74,16 @@ public class ContentScreeningActivity extends AppCompatActivity implements Conte
                 Log.d("Screen", screenList.toString());
                 saveAll();
                 screenList.clear();
-                Intent i = new Intent(ContentScreeningActivity.this, ContentScreeningActivity.class);
-                startActivity(i);
-                finish();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i = new Intent(ContentScreeningActivity.this, ContentScreeningActivity.class);
+                        startActivity(i);
+                        finish();
+
+                    }
+                }, 1000);
+
             }
         });
         Button approveAllButton = findViewById(R.id.approveAll);
@@ -93,9 +101,16 @@ public class ContentScreeningActivity extends AppCompatActivity implements Conte
                         if(response.body()) {
                             Toast.makeText(ContentScreeningActivity.this, "success", Toast.LENGTH_LONG).show();
                             screenList.clear();
-                            Intent i = new Intent(ContentScreeningActivity.this, CrawlActivity.class);
-                            startActivity(i);
-                            finish();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Intent i = new Intent(ContentScreeningActivity.this, ContentScreeningActivity.class);
+                                    startActivity(i);
+                                    finish();
+
+                                }
+                            }, 1000);
+
                         }
                     }
 
@@ -120,9 +135,15 @@ public class ContentScreeningActivity extends AppCompatActivity implements Conte
                 Log.d("Reject", screenList.toString());
                 saveAll();
                 screenList.clear();
-                Intent i = new Intent(ContentScreeningActivity.this, ContentScreeningActivity.class);
-                startActivity(i);
-                finish();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i = new Intent(ContentScreeningActivity.this, ContentScreeningActivity.class);
+                        startActivity(i);
+                        finish();
+
+                    }
+                }, 1000);
             }
         });
 
@@ -161,11 +182,18 @@ public class ContentScreeningActivity extends AppCompatActivity implements Conte
 
 
 
-                if(response.body()!=null) questionList.addAll(response.body());
-                Log.e("ContentScreening", questionList.get(0).toString());
+                if(response.body().size()>0) {questionList.addAll(response.body());
+                //Log.e("ContentScreening", questionList.get(0).toString());
                 adapter.notifyDataSetChanged();
+                Toast.makeText(ContentScreeningActivity.this, "success", Toast.LENGTH_LONG).show();}
 
-                Toast.makeText(ContentScreeningActivity.this, "success", Toast.LENGTH_LONG).show();
+                else {
+                    Toast.makeText(ContentScreeningActivity.this, "no more questions", Toast.LENGTH_LONG).show();
+                }
+
+
+
+
             }
 
             @Override
@@ -190,11 +218,17 @@ public class ContentScreeningActivity extends AppCompatActivity implements Conte
 
 
 
-                if(response.body()!=null) questionList.addAll(response.body());
+                if(response.body().size()>0) {questionList.addAll(response.body());
                 Log.e("ContentScreening", questionList.get(0).toString());
                 adapter.notifyDataSetChanged();
-                i++;
                 Toast.makeText(ContentScreeningActivity.this, "success", Toast.LENGTH_LONG).show();
+                    i++;
+                }
+                else{
+                    Toast.makeText(ContentScreeningActivity.this, "no more questions", Toast.LENGTH_LONG).show();
+                }
+
+
             }
 
             @Override

@@ -193,6 +193,7 @@ public class Navigation_Activity extends AppCompatActivity
         } else if (id == R.id.nav_contest) {
             Intent intent = new Intent(Navigation_Activity.this,ContestCreationActivity.class);
             startActivity(intent);
+            finish();
 
         } else if (id == R.id.nav_screen) {
             Intent intent = new Intent(Navigation_Activity.this,ContentScreeningActivity.class);

@@ -358,6 +358,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 imageView.setVisibility(View.INVISIBLE);
                 linearLayout.setVisibility(View.INVISIBLE);
                 questionText.setVisibility(View.INVISIBLE);
+                videoView.setVisibility(View.INVISIBLE);
                 replay.setVisibility(View.INVISIBLE);
                 UserAnswerDTO userAnswerDTO = new UserAnswerDTO();
 //                userAnswerDTO.getContestQuestionDTO().setContestQuestionId(globalContestQuestionDTO.getContestQuestionId());
@@ -402,6 +403,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 imageView.setVisibility(View.INVISIBLE);
                 linearLayout.setVisibility(View.INVISIBLE);
                 questionText.setVisibility(View.INVISIBLE);
+                videoView.setVisibility(View.INVISIBLE);
                 replay.setVisibility(View.INVISIBLE);
 
                 if(skipCount == 2){
@@ -512,7 +514,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 });
                 startActivity(new Intent(GameActivity.this,LeaderboardActivity.class));
                 finish();
-
+                break;
+            case R.id.replay_button:
+                try {
+                    playAudio(globalContestQuestionDTO.getQuestionDTO());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
         }
     }
 
@@ -526,13 +534,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         videoView.setVideoURI(videoUri);
         videoView.requestFocus();
         videoView.start();
-        replay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                videoView.setVisibility(View.VISIBLE);
-                videoView.start();
-            }
-        });
+//        replay.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                videoView.setVisibility(View.VISIBLE);
+//                videoView.start();
+//            }
+//        });
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -546,9 +554,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                     optionThree.setText("C: " + questionDTO.getOptionThree());
                     optionFour.setText("D: " + questionDTO.getOptionFour());
                     //mediaPlayer.stop();
-                    videoView.setVisibility(View.INVISIBLE);
 
-                    //playAudio();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -558,21 +564,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void playAudio(final QuestionDTO questionDTO) throws IOException {
+        replay.setVisibility(View.INVISIBLE);
         mediaPlayer = new MediaPlayer();
         mediaPlayer.setDataSource(questionDTO.getQuestionUrl());//"http://www.hubharp.com/web_sound/BachGavotteShort.mp3");
         mediaPlayer.prepare();
         mediaPlayer.start();
-        replay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mediaPlayer.start();
-            }
-        });
-
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
-                replay.setVisibility(View.VISIBLE);
                 showQuestionViews();
                 answerType = questionDTO.getAnswerType();
                 questionText.setText(questionDTO.getQuestionText());
@@ -581,6 +580,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 optionThree.setText("C: " + questionDTO.getOptionThree());
                 optionFour.setText("D: " + questionDTO.getOptionFour());
                 mediaPlayer.stop();
+                replay.setVisibility(View.VISIBLE);
             }
         });
 
@@ -588,7 +588,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void displayImage(QuestionDTO questionDTO){
-        imageView.setVisibility(View.VISIBLE);
+
         new DownLoadImageTask(imageView).execute(questionDTO.getQuestionUrl());//"https://i.ytimg.com/vi/y0VODhYvq3s/maxresdefault.jpg");
         showQuestionViews();
         answerType = questionDTO.getAnswerType();
@@ -632,6 +632,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
          */
         protected void onPostExecute(Bitmap result){
             imageView.setImageBitmap(result);
+            imageView.setVisibility(View.VISIBLE);
         }
     }
 

@@ -125,8 +125,13 @@ public class MediumFragment extends Fragment implements PaginationAdapter.Commun
             @Override
             public void onResponse(Call<List<QuestionDTO>> call, Response<List<QuestionDTO>> response) {
 
-                if(response.body()!=null) questionDTOList.addAll(response.body());
-                adapter.notifyDataSetChanged();
+                if(response.body().size()>0) {
+                    questionDTOList.addAll(response.body());
+                    adapter.notifyDataSetChanged();
+                }
+                else{
+                    Toast.makeText(getActivity(), "no questions", Toast.LENGTH_LONG).show();
+                }
 
             }
 
@@ -156,8 +161,14 @@ public class MediumFragment extends Fragment implements PaginationAdapter.Commun
 
                 isLoading = false;
 
-                if(response.body()!=null) questionDTOList.addAll(response.body());
-                adapter.notifyDataSetChanged();
+                if(response.body().size()>0) {
+                    questionDTOList.addAll(response.body());
+                    adapter.notifyDataSetChanged();
+                    i++;
+                }
+                else{
+                    Toast.makeText(getActivity(), "no questions", Toast.LENGTH_LONG).show();
+                }
 
 
             }

@@ -124,8 +124,13 @@ public class HardFragment extends Fragment implements PaginationAdapter.Communic
             public void onResponse(Call<List<QuestionDTO>> call, Response<List<QuestionDTO>> response) {
 
 
-                if(response.body()!=null) questionDTOList.addAll(response.body());
-                adapter.notifyDataSetChanged();
+                if(response.body().size()>0) {questionDTOList.addAll(response.body());
+                    Log.e("EasyFragment", questionDTOList.get(0).toString());
+                    adapter.notifyDataSetChanged();
+                    Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();}
+                else{
+                    Toast.makeText(getActivity(), "no questions", Toast.LENGTH_LONG).show();
+                }
 
             }
 
@@ -153,9 +158,15 @@ public class HardFragment extends Fragment implements PaginationAdapter.Communic
 
                 isLoading = false;
 
-                if(response.body()!=null) questionDTOList.addAll(response.body());
-                adapter.notifyDataSetChanged();
-                i++;
+                if(response.body().size()>0) {
+                    questionDTOList.addAll(response.body());
+                    adapter.notifyDataSetChanged();
+                    i++;
+                }
+                else{
+                    Toast.makeText(getActivity(), "no questions", Toast.LENGTH_LONG).show();
+                }
+
 
             }
 
