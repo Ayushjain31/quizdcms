@@ -4,20 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?android:attr/colorButtonNormal"
     tools:context=".QuizMaster.QuizMaterContestActivity">
 
-    <TextView
-        android:id="@+id/contestName_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="    CONTEST NAME    "
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/question_recycler_view_id"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/holo_red_light"
+        android:textAlignment="center"
+        android:theme="@style/AppTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/contestName_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="CONTEST NAME"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/question_recycler_view_id"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/end_contest_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:drawable/screen_background_light"
+            android:text=" End "
+            app:layout_constraintBottom_toTopOf="@+id/question_recycler_view_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/contestName_id"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.v7.widget.Toolbar>
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/question_recycler_view_id"
@@ -26,25 +60,12 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contestName_id" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <Button
-        android:id="@+id/end_contest_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="8dp"
-        android:text=" End "
-        app:layout_constraintBottom_toTopOf="@+id/question_recycler_view_id"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/contestName_id"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

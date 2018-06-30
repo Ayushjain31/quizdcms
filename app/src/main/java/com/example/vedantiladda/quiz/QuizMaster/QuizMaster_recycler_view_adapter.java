@@ -35,6 +35,7 @@ public class QuizMaster_recycler_view_adapter extends RecyclerView.Adapter<QuizM
     public void onBindViewHolder(@NonNull View_Holder holder, final int position) {
         holder.contestName.setText(listDC.get(position).getContestName());
         //holder.startTime.setText(String.valueOf(listDC.get(position).getStartDate()));
+        holder.textView.setText(String.valueOf(position+1)+". ");
         holder.contestName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,13 +59,14 @@ public class QuizMaster_recycler_view_adapter extends RecyclerView.Adapter<QuizM
     }
 
     public class View_Holder extends RecyclerView.ViewHolder {
-        TextView contestName;
+        TextView contestName,textView;
         TextView startTime;
         public View_Holder(@NonNull View itemView) {
             super(itemView);
             context=itemView.getContext();
             contestName=(TextView)itemView.findViewById(R.id.contestName_id);
             startTime=(TextView)itemView.findViewById(R.id.startTime_id);
+            textView=itemView.findViewById(R.id.textView5);
         }
     }
 }

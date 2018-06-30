@@ -80,6 +80,7 @@ public class DynamicGame extends AppCompatActivity implements View.OnClickListen
             // Get extra data included in the Intent
             fcmQuestion =(FCMQuestion) intent.getSerializableExtra("messagequestion");
             Log.d("receiver", "Got message: " + fcmQuestion.toString());
+
             if(fcmQuestion.getStatus().equals("end")){
                 Toast.makeText(DynamicGame.this,"Game Over",Toast.LENGTH_SHORT).show();
                 client = new OkHttpClient.Builder().build();
@@ -108,7 +109,9 @@ public class DynamicGame extends AppCompatActivity implements View.OnClickListen
 
 
 
-                }else {
+                }else if(fcmQuestion.getStatus().equals("next")){
+
+                }else if(fcmQuestion.getStatus().equals("question")){
                 displayQuestion(fcmQuestion);
             }
         }

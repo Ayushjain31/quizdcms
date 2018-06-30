@@ -139,7 +139,7 @@ public class CrawlActivity extends AppCompatActivity implements AdapterView.OnIt
 
 
             OkHttpClient okHttpClient1 = new OkHttpClient.Builder().build();
-            final Retrofit retrofit1 = new Retrofit.Builder().baseUrl("http://10.177.2.196:8080")
+            final Retrofit retrofit1 = new Retrofit.Builder().baseUrl("http://10.177.2.201:8085")
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(okHttpClient1)
                     .build();
@@ -212,7 +212,7 @@ public class CrawlActivity extends AppCompatActivity implements AdapterView.OnIt
             public void onClick(View view) {
                 urlDTO1 = new UrlDTO();
 
-                final Retrofit retrofit2 = new Retrofit.Builder().baseUrl("http://10.177.2.196:8080/")
+                final Retrofit retrofit2 = new Retrofit.Builder().baseUrl("http://10.177.2.201:8085/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .client(okHttpClient)
                         .build();

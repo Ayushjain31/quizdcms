@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.vedantiladda.quiz.IApiCall;
 import com.example.vedantiladda.quiz.PaginationAdapter;
 import com.example.vedantiladda.quiz.R;
+import com.example.vedantiladda.quiz.dto.ContestRulesDTO;
 import com.example.vedantiladda.quiz.dto.QuestionDTO;
 import com.example.vedantiladda.quiz.utils.EndlessRecyclerViewScrollListener;
 
@@ -41,13 +42,20 @@ public class HardFragment extends Fragment implements PaginationAdapter.Communic
     private boolean isLoading = false;
     private boolean isLastPage = false;
     private List<QuestionDTO> questionDTOList = new ArrayList<>();
-        OkHttpClient client = new OkHttpClient.Builder().build();
+    OkHttpClient client = new OkHttpClient.Builder().build();
     final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://10.177.2.201:8081/ ")
+            .baseUrl("http://10.177.2.200:8081/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build();
     int i=2;
+    final Retrofit retrofit2 = new Retrofit.Builder()
+            .baseUrl("http://10.177.2.200:8080/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
+            .build();
+
+    ContestRulesDTO rules = new ContestRulesDTO();
     String category;
     String contestType;
     public interface HardQuestions {
@@ -72,10 +80,9 @@ public class HardFragment extends Fragment implements PaginationAdapter.Communic
         category = contest.getStringExtra("Contest_CategoryId");
         View view =  inflater.inflate(R.layout.hard_tab, container, false);
         rv = view.findViewById(R.id.hardRecycler);
-        adapter = new PaginationAdapter(questionDTOList, this);
-        linearLayoutManager = new LinearLayoutManager(getActivity());
-        rv.setLayoutManager(linearLayoutManager);
-        rv.setAdapter(adapter);
+        getContestRules();
+
+
         loadFirstPage();
         rv.addOnScrollListener(new EndlessRecyclerViewScrollListener() {
             @Override
@@ -87,6 +94,32 @@ public class HardFragment extends Fragment implements PaginationAdapter.Communic
 
         return view;
 
+    }
+    public void getContestRules() {
+        Log.d("API", "method()");
+        IApiCall iApiCall = retrofit2.create(IApiCall.class);
+        Call<ContestRulesDTO> getAllCall = iApiCall.getRules();
+
+        getAllCall.enqueue(new Callback<ContestRulesDTO>() {
+            @Override
+            public void onResponse(Call<ContestRulesDTO> call, Response<ContestRulesDTO> response) {
+                rules = response.body();
+
+                adapter = new PaginationAdapter(questionDTOList, HardFragment.this, rules, "hard");
+                linearLayoutManager = new LinearLayoutManager(getActivity());
+                rv.setLayoutManager(linearLayoutManager);
+                rv.setAdapter(adapter);
+                Log.d("EASYRULES", rules.toString());
+                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(Call<ContestRulesDTO> call, Throwable t) {
+                Log.d("API", "FAILED");
+                Toast.makeText(getActivity(), "failure", Toast.LENGTH_LONG).show();
+
+            }
+        });
     }
     @Override
     public void onClickCheckBox(String id) {
@@ -113,6 +146,7 @@ public class HardFragment extends Fragment implements PaginationAdapter.Communic
     private void loadFirstPage() {
 
 
+
         IApiCall iApiCall = retrofit.create(IApiCall.class);
         Call<List<QuestionDTO>> getAllCall = iApiCall.getAllQuestions("hard", 1);
         if(contestType.equals("static")){
@@ -124,13 +158,8 @@ public class HardFragment extends Fragment implements PaginationAdapter.Communic
             public void onResponse(Call<List<QuestionDTO>> call, Response<List<QuestionDTO>> response) {
 
 
-                if(response.body().size()>0) {questionDTOList.addAll(response.body());
-                    Log.e("EasyFragment", questionDTOList.get(0).toString());
-                    adapter.notifyDataSetChanged();
-                    Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();}
-                else{
-                    Toast.makeText(getActivity(), "no questions", Toast.LENGTH_LONG).show();
-                }
+                questionDTOList.addAll(response.body());
+                adapter.notifyDataSetChanged();
 
             }
 
@@ -146,6 +175,7 @@ public class HardFragment extends Fragment implements PaginationAdapter.Communic
     private void loadNextPage() {
 
 
+
         IApiCall iApiCall = retrofit.create(IApiCall.class);
         Call<List<QuestionDTO>> getAllCall = iApiCall.getAllQuestions("hard", i);
         if(contestType.equals("static")){
@@ -158,15 +188,9 @@ public class HardFragment extends Fragment implements PaginationAdapter.Communic
 
                 isLoading = false;
 
-                if(response.body().size()>0) {
-                    questionDTOList.addAll(response.body());
-                    adapter.notifyDataSetChanged();
-                    i++;
-                }
-                else{
-                    Toast.makeText(getActivity(), "no questions", Toast.LENGTH_LONG).show();
-                }
-
+                questionDTOList.addAll(response.body());
+                adapter.notifyDataSetChanged();
+                i++;
 
             }
 
@@ -179,3 +203,4 @@ public class HardFragment extends Fragment implements PaginationAdapter.Communic
     }
 
 }
+

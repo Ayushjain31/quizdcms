@@ -52,27 +52,12 @@ public class UserContests extends Fragment implements RVContestsAdapter.Category
 
         getAllCategory();
 
-        // Hardcoded categories
-//        CategoryDTO categoryDTO = new CategoryDTO();
-//        categoryDTO.setCategoryId("1234");
-//        categoryDTO.setCategoryName("Rohit");
-//        categories.add(categoryDTO);
-//
-//        CategoryDTO category1 = new CategoryDTO();
-//        category1.setCategoryName("Nilay");
-//        category1.setCategoryId("2121");
-//        categories.add(category1);
-//
-//        rvContestsAdapter.notifyDataSetChanged();
-
-
         return view;
 
     }
 
     @Override
     public void itemClick(CategoryDTO categoryDTO) {
-        Toast.makeText(getActivity(),"YO",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getActivity(), ContestNames.class);
         intent.putExtra("categoryDTO", categoryDTO);
         startActivity(intent);
@@ -93,19 +78,24 @@ public class UserContests extends Fragment implements RVContestsAdapter.Category
         getAllCategories.enqueue(new Callback<List<CategoryDTO>>() {
             @Override
             public void onResponse(Call<List<CategoryDTO>> call, Response<List<CategoryDTO>> response) {
-                categories.clear();
-                categories.addAll(response.body());
-                rvContestsAdapter.notifyDataSetChanged();
-                Toast.makeText(getActivity(),"Retrieved categories Successfully" , Toast.LENGTH_SHORT).show();
-                Log.i(TAG, "API CALL SUCCESS");
+                try {
+                    categories.clear();
+                    categories.addAll(response.body());
+                    rvContestsAdapter.notifyDataSetChanged();
+                    Toast.makeText(getActivity(), "Retrieved categories Successfully", Toast.LENGTH_SHORT).show();
+                    Log.i(TAG, "API CALL SUCCESS");
+                }catch (Exception e){
+                    Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Log.e(TAG, e.getMessage());
 
+                }
 
             }
 
             @Override
             public void onFailure(Call<List<CategoryDTO>> call, Throwable t) {
                 Toast.makeText(getActivity(),"API call failed" , Toast.LENGTH_SHORT).show();
-                Log.i(TAG, "API CALL FAILED");
+                Log.e(TAG, "API CALL FAILED");
 
 
             }

@@ -17,11 +17,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.vedantiladda.quiz.LeaderboardActivity;
-import com.example.vedantiladda.quiz.Navigation_Activity;
 import com.example.vedantiladda.quiz.R;
 import com.example.vedantiladda.quiz.login.LoginActivity;
-import com.example.vedantiladda.quiz.user.Leaderboard;
-import com.example.vedantiladda.quiz.user.UserContests;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class UserMain extends AppCompatActivity
@@ -37,7 +34,6 @@ public class UserMain extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FirebaseMessaging.getInstance().subscribeToTopic("user");
 //        sharedPreferencesForFCM = getSharedPreferences(getString(R.string.shared_pref_fcm_file),Context.MODE_PRIVATE);
 //        editorForFCM = sharedPreferencesForFCM.edit();
 //        editorForFCM =
@@ -55,6 +51,8 @@ public class UserMain extends AppCompatActivity
         displaySelectedScreen(R.id.nav_contests);
 
         FirebaseMessaging.getInstance().unsubscribeFromTopic("quizMaster");
+        FirebaseMessaging.getInstance().subscribeToTopic("user");
+
 
 
 

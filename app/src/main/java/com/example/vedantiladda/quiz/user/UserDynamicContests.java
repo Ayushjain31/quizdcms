@@ -41,8 +41,6 @@ public class UserDynamicContests extends Fragment implements RVContestNameAdapte
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //returning our layout file
-        //change R.layout.yourlayoutfilename for each of your fragments
 
         View view = inflater.inflate(R.layout.fragment_dynamic_contests, container, false);
         recyclerView = view.findViewById(R.id.rv_dynamic_list);
@@ -59,7 +57,6 @@ public class UserDynamicContests extends Fragment implements RVContestNameAdapte
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle(getString(R.string.title_activity_dynamic_name));
     }
 

@@ -47,6 +47,9 @@ public class QuizMasterActivity extends AppCompatActivity implements QuizMaster_
         setContentView(R.layout.activity_quiz_master);
         // FirebaseApp.initializeApp(getApplicationContext());
         FirebaseApp.initializeApp(this);
+        FirebaseMessaging.getInstance().unsubscribeFromTopic("user");
+
+        FirebaseMessaging.getInstance().subscribeToTopic("quizMaster");
 
 
         qmclient = new OkHttpClient.Builder().build();
@@ -67,7 +70,7 @@ public class QuizMasterActivity extends AppCompatActivity implements QuizMaster_
                 editor.remove("Role");
                 editor.commit();
 
-                FirebaseMessaging.getInstance().subscribeToTopic("quizMaster");
+                FirebaseMessaging.getInstance().unsubscribeFromTopic("quizMaster");
 
                 Intent intent = new Intent(QuizMasterActivity.this,LoginActivity.class);
                 startActivity(intent);

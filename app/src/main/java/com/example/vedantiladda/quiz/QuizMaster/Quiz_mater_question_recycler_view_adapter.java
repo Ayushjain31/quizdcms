@@ -1,6 +1,7 @@
 package com.example.vedantiladda.quiz.QuizMaster;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -37,7 +38,7 @@ public class Quiz_mater_question_recycler_view_adapter extends RecyclerView.Adap
 
     @Override
     public void onBindViewHolder(@NonNull final View_Holder holder, final int position) {
-        holder.questionContent.setText(QmQuestionlist.get(position).getQuestionDTO().getQuestionText());
+        holder.questionContent.setText("Q."+ String.valueOf(position + 1) + "" + QmQuestionlist.get(position).getQuestionDTO().getQuestionText());
         Log.i("RV",QmQuestionlist.get(position).getQuestionDTO().getQuestionText());
 
 
@@ -48,16 +49,25 @@ public class Quiz_mater_question_recycler_view_adapter extends RecyclerView.Adap
         //holder.time.setText();
 
 
+        holder.push.setText("Push Q." + String.valueOf(position + 1));
+
+        // holder.push.setEnabled(QmQuestionlist.get(position).getVisible());
+
+
+        //holder.time.setText();
+
+
         holder.push.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 // intent method
-                  holder.push.setEnabled(false);
-                 //
+                holder.push.setEnabled(false);
+                //
+                holder.questionContent.setTextColor(Color.YELLOW);
+                holder.push.setTextColor(Color.YELLOW);
 
-
-                String contestQuestionId=QmQuestionlist.get(position).getContestQuestionId();
+                String contestQuestionId = QmQuestionlist.get(position).getContestQuestionId();
                 iPostsAdapterCommunicatorQuestionQuizMaster.itemClick(contestQuestionId);
 
             }

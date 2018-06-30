@@ -40,7 +40,9 @@ public class FCMreceiver extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(final RemoteMessage remoteMessage) {
         // ...
-        Log.d("Message", "From:  User" + remoteMessage.getFrom());
+        Log.d("Message ", "From:  User" + remoteMessage.getFrom());
+        Log.d("MESSAGE # ", remoteMessage.getData().toString());
+
 
         if(remoteMessage.getFrom().equals("/topics/user")){
 
@@ -48,7 +50,6 @@ public class FCMreceiver extends FirebaseMessagingService {
             if (remoteMessage.getData().size() > 0) {
                 Log.d("Message", "Message data payload: from USer " + remoteMessage.getData());
                 Handler mainHandler = new Handler(getMainLooper());
-
                 mainHandler.post(new Runnable() {
                     @Override
                     public void run() {
@@ -67,44 +68,60 @@ public class FCMreceiver extends FirebaseMessagingService {
                         fcmQuestion.setAnswerType(remoteMessage.getData().get(answerType));
                         fcmQuestion.setStatus(remoteMessage.getData().get(status));
 
+                        Toast.makeText(getApplicationContext(), remoteMessage.getData().get("detail"), Toast.LENGTH_LONG).show();
+
+
                         sendMessage(fcmQuestion);
                     }
                 });
-        }if(remoteMessage.getFrom().equals("/topics/quizMaster")){
-                if (remoteMessage.getData().get("status").equals("next")) {
-                    //                        waitForUsers.dismissDiologBox();
-
-                    Log.d("sender from QM", "Broadcasting message");
-                    Intent intent = new Intent("custom-event-name");
-                    // You can also include some extra data.
-                    intent.putExtra("message", "This is my message!");
-                    LocalBroadcastManager.getInstance(FCMreceiver.this).sendBroadcast(intent);
-                }
-                else if(remoteMessage.getData().get("status").equals("start")) {
-                    // Log.d("sender", "Broadcasting message");
-
-                    Intent intent= new Intent(FCMreceiver.this,QuizMasterActivity.class);
-                    startActivity(intent);
-                }
-                else if(remoteMessage.getData().get("status").equals("end")){
-                    Intent intent= new Intent(FCMreceiver.this,QuizMasterActivity.class);
-                    startActivity(intent);
-                }
-                Toast.makeText(getApplicationContext(), remoteMessage.getData().get("detail"), Toast.LENGTH_LONG).show();
             }
 
 
-        }
-
-
-
         // Check if message contains a notification payload.
-        if (remoteMessage.getNotification() != null) {
-            Log.d("Message", "Message Notification Body: " + remoteMessage.getNotification().getBody());
-        }
+            if (remoteMessage.getNotification() != null) {
+                Log.d("Message", "Message Notification Body: " + remoteMessage.getNotification().getBody());
+            }
 
         // Also if you intend on generating your own notifications as a result of a received FCM
         // message, here is where that should be initiated. See sendNotification method below.
+        }if(remoteMessage.getFrom().equals("/topics/quizMaster")){
+            Handler mainHandler = new Handler(getMainLooper());
+            mainHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    if (remoteMessage.getData().get("status").equals("next")) {
+                        //                        waitForUsers.dismissDiologBox();
+
+                        Log.d("sender from QM", "Broadcasting message");
+                        // You can also include some extra data.
+                        bhejo();
+                    }
+                    else if(remoteMessage.getData().get("status").equals("start")) {
+                        // Log.d("sender", "Broadcasting message");
+
+                        Intent intent= new Intent(FCMreceiver.this,QuizMasterActivity.class);
+                        startActivity(intent);
+                    }
+                    else if(remoteMessage.getData().get("status").equals("end")){
+                        Intent intent= new Intent(FCMreceiver.this,QuizMasterActivity.class);
+                        startActivity(intent);
+                    }
+                    Toast.makeText(getApplicationContext(), remoteMessage.getData().get("detail"), Toast.LENGTH_LONG).show();
+                }
+
+            });
+
+        }
+
+
+    }
+
+
+    private void bhejo(){
+        Intent intent = new Intent("custom-event");
+        intent.putExtra("message", "This is my message!");
+        Log.e("FCM CHECK", "THIS IS MY MESSAGE");
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
         //  TODO : change it accordingly - used to send msgs to dynamic game
     private void sendMessage(FCMQuestion fcmQuestion) {

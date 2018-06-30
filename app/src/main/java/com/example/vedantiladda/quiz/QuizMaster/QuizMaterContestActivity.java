@@ -35,6 +35,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class QuizMaterContestActivity extends AppCompatActivity implements Quiz_mater_question_recycler_view_adapter.IPostsAdapterCommunicatorQuestionQuizMaster{
     private RecyclerView questionRecyclerView;
 
+    private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Get extra data included in the Intent
+            String message = intent.getStringExtra("message");
+            dialogsUtils.dismissDialogBox();
+            Log.d("receiver", "Got message: " + message);
+
+        }
+    };
+
     private List<ContestQuestionDTO> contestQuestionDTOList=new ArrayList<>();
      //  private List<ContestQuestionCopy> contestQuestionCopyList=new ArrayList<>();
     //Collections.copy(contestQue)
@@ -60,10 +71,14 @@ public class QuizMaterContestActivity extends AppCompatActivity implements Quiz_
     protected void onCreate(Bundle savedInstanceState) {
 //        public ProgressDialog progressDialog = new ProgressDialog(QuizMaterContestActivity.this,
 //                R.style.AppTheme_Dark_Dialog);
-        LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver,
-                new IntentFilter("custom-event-name"));
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_mater_contest);
+
+        LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver,
+                new IntentFilter("custom-event"));
+
+
         endContest=(Button)findViewById(R.id.end_contest_id);
         intent=getIntent();
         contestId=intent.getStringExtra("contestId");
@@ -130,26 +145,15 @@ public class QuizMaterContestActivity extends AppCompatActivity implements Quiz_
     });
     }
 
-//    @Override
-//    public void itemClick(String questionId) {
-//
-//    }
-
 
     @Override
     public void itemClick(String contestQuestionId) {
 
         dialogsUtils.showProgressDialog();
 
-
-        //diolog box method
-//        progressDialog.setIndeterminate(true);
-//        progressDialog.setMessage("Wait.....");
-//        progressDialog.show();
-        //
 //TODO change part to dip
         postClient=new OkHttpClient.Builder().build();
-        postRetrofit= questionRetrofit=new  Retrofit.Builder().baseUrl("http://10.177.1.245:8080/")
+        postRetrofit= questionRetrofit=new  Retrofit.Builder().baseUrl("http://10.177.2.201:8080/")
                 .addConverterFactory(GsonConverterFactory.create()).client(client).build();
         IApiCall iApiCall=postRetrofit.create(IApiCall.class);
         Call<Boolean> getAllCall=iApiCall.postQuestion(contestQuestionId);
@@ -157,19 +161,6 @@ public class QuizMaterContestActivity extends AppCompatActivity implements Quiz_
             @Override
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 Toast.makeText(QuizMaterContestActivity.this, "Pushed Question Successfully", Toast.LENGTH_LONG).show();
-
-//           intent Method
-//                if(response.equals(true)) {
-//
-//
-//
-//
-//
-//                    Intent intent = new Intent(QuizMaterContestActivity.this, WaitActivity.class);
-//                    startActivity(intent);
-//                }
-
-//
 
             }
 
@@ -182,20 +173,6 @@ public class QuizMaterContestActivity extends AppCompatActivity implements Quiz_
 
 
     }
-    private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            // Get extra data included in the Intent
-            String message = intent.getStringExtra("message");
-            dialogsUtils.dismissDialogBox();
-            Log.d("receiver", "Got message: " + message);
 
-        }
-    };
 
-//    @Override
-//    public void dismissDiologBox() {
-//        dialogsUtils.dismissDialogBox();
-//        // progressDialog.dismiss();
-//    }
 }

@@ -31,7 +31,7 @@ public class ContestNames extends AppCompatActivity implements RVContestNameAdap
     private RecyclerView recyclerView;
     private RVContestNameAdapter rvContestNameAdapter;
     private List<ContestDTO> contestDTOS = new ArrayList<>();
-    CategoryDTO categoryDTO;
+    private CategoryDTO categoryDTO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

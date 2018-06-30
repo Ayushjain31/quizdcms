@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.vedantiladda.quiz.IApiCall;
 import com.example.vedantiladda.quiz.PaginationAdapter;
 import com.example.vedantiladda.quiz.R;
+import com.example.vedantiladda.quiz.dto.ContestRulesDTO;
 import com.example.vedantiladda.quiz.dto.QuestionDTO;
 import com.example.vedantiladda.quiz.utils.EndlessRecyclerViewScrollListener;
 
@@ -37,23 +38,29 @@ public class MediumFragment extends Fragment implements PaginationAdapter.Commun
     PaginationAdapter adapter;
     LinearLayoutManager linearLayoutManager;
     RecyclerView rv;
-    private boolean isLoading = false;
-    private boolean isLastPage = false;
     private List<QuestionDTO> questionDTOList = new ArrayList<>();
-        OkHttpClient client = new OkHttpClient.Builder().build();
+    OkHttpClient client = new OkHttpClient.Builder().build();
     final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(" http://10.177.2.201:8081/")
+            .baseUrl("http://10.177.2.200:8081/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build();
     int i=2;
     String category;
     String contestType;
+    final Retrofit retrofit2 = new Retrofit.Builder()
+            .baseUrl("http://10.177.2.201:8080")
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
+            .build();
+
+    ContestRulesDTO rules = new ContestRulesDTO();
     public interface MediumQuestions {
         void onMediumDataPass(List<QuestionDTO> selectedQuestionDTOS);
     }
 
     MediumQuestions mediumQuestions;
+    Boolean flagRules=false;
 
 
     @Override
@@ -61,6 +68,8 @@ public class MediumFragment extends Fragment implements PaginationAdapter.Commun
         super.onAttach(context);
         mediumQuestions = (MediumQuestions) context;
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -70,10 +79,8 @@ public class MediumFragment extends Fragment implements PaginationAdapter.Commun
         category = contest.getStringExtra("Contest_CategoryId");
         View view =  inflater.inflate(R.layout.medium_tab, container, false);
         rv = view.findViewById(R.id.mediumRecycler);
-        adapter = new PaginationAdapter(questionDTOList, this);
-        linearLayoutManager = new LinearLayoutManager(getActivity());
-        rv.setLayoutManager(linearLayoutManager);
-        rv.setAdapter(adapter);
+
+        getContestRules();
         loadFirstPage();
         rv.addOnScrollListener(new EndlessRecyclerViewScrollListener() {
             @Override
@@ -87,6 +94,33 @@ public class MediumFragment extends Fragment implements PaginationAdapter.Commun
 
 
     }
+    public void getContestRules() {
+        Log.d("API", "method()");
+        IApiCall iApiCall = retrofit2.create(IApiCall.class);
+        Call<ContestRulesDTO> getAllCall = iApiCall.getRules();
+
+        getAllCall.enqueue(new Callback<ContestRulesDTO>() {
+            @Override
+            public void onResponse(Call<ContestRulesDTO> call, Response<ContestRulesDTO> response) {
+                rules = response.body();
+
+                adapter = new PaginationAdapter(questionDTOList, MediumFragment.this, rules, "medium");
+                linearLayoutManager = new LinearLayoutManager(getActivity());
+                rv.setLayoutManager(linearLayoutManager);
+                rv.setAdapter(adapter);
+                Log.d("EASYRULES", rules.toString());
+                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(Call<ContestRulesDTO> call, Throwable t) {
+                Log.d("API", "FAILED");
+                Toast.makeText(getActivity(), "failure", Toast.LENGTH_LONG).show();
+
+            }
+        });
+    }
+
 
     @Override
     public void onClickCheckBox(String id) {
@@ -125,13 +159,8 @@ public class MediumFragment extends Fragment implements PaginationAdapter.Commun
             @Override
             public void onResponse(Call<List<QuestionDTO>> call, Response<List<QuestionDTO>> response) {
 
-                if(response.body().size()>0) {
-                    questionDTOList.addAll(response.body());
-                    adapter.notifyDataSetChanged();
-                }
-                else{
-                    Toast.makeText(getActivity(), "no questions", Toast.LENGTH_LONG).show();
-                }
+                questionDTOList.addAll(response.body());
+                adapter.notifyDataSetChanged();
 
             }
 
@@ -141,6 +170,8 @@ public class MediumFragment extends Fragment implements PaginationAdapter.Commun
             }
         });
     }
+
+
 
 
 
@@ -158,17 +189,8 @@ public class MediumFragment extends Fragment implements PaginationAdapter.Commun
         getAllCall.enqueue(new Callback<List<QuestionDTO>>() {
             @Override
             public void onResponse(Call<List<QuestionDTO>> call, Response<List<QuestionDTO>> response) {
-
-                isLoading = false;
-
-                if(response.body().size()>0) {
-                    questionDTOList.addAll(response.body());
-                    adapter.notifyDataSetChanged();
-                    i++;
-                }
-                else{
-                    Toast.makeText(getActivity(), "no questions", Toast.LENGTH_LONG).show();
-                }
+                questionDTOList.addAll(response.body());
+                adapter.notifyDataSetChanged();
 
 
             }
@@ -180,4 +202,6 @@ public class MediumFragment extends Fragment implements PaginationAdapter.Commun
             }
         });
     }
+
 }
+

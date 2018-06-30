@@ -36,7 +36,7 @@ public class RVContestNameAdapter extends RecyclerView.Adapter<RVContestNameAdap
         postsViewHolder.contestName.setText(String.valueOf(contestDTO.getContestName()));
         postsViewHolder.bonus.setText("Bonus: " + String.valueOf(contestDTO.getBonus()));
         postsViewHolder.noOfQuestions.setText("Questions: " + String.valueOf(contestDTO.getNumberOfQuestions()));
-//        postsViewHolder.duration.setText(String.valueOf(contestDTO.getEndDate()));
+        postsViewHolder.duration.setText(String.valueOf("End Date: "+ contestDTO.getEndDate()));
         postsViewHolder.contestName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

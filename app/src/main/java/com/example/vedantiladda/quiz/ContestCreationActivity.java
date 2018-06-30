@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.vedantiladda.quiz.dto.Category;
 import com.example.vedantiladda.quiz.dto.Contest;
+import com.example.vedantiladda.quiz.dto.ContestRulesDTO;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -52,6 +53,7 @@ public class ContestCreationActivity extends AppCompatActivity {
     final List<String> categoriesList = new ArrayList<>();
     final Map<String ,String> categoryListMap = new HashMap<>();
     String AdminEmailId ;
+    int numberOfQuestions;
     ArrayAdapter<String>  spinnerArrayAdapter;
 
 
@@ -64,6 +66,33 @@ public class ContestCreationActivity extends AppCompatActivity {
         addListenerOnButton();
         addListnerOnContestTypeItemSelection();
         onFocusChangeListners();
+
+
+    }
+
+    private int getNumberOfQuestions() {
+        client =  new OkHttpClient.Builder().build();
+        retrofit = new Retrofit.Builder().
+                baseUrl(getString(R.string.get_rules_dto))
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
+                .build();
+
+        IApiCall iApiCall = retrofit.create(IApiCall.class);
+        Call<ContestRulesDTO> getCategoriesCall = iApiCall.getRules();
+        getCategoriesCall.enqueue(new Callback<ContestRulesDTO>() {
+            @Override
+
+            public void onResponse(Call<ContestRulesDTO> call, Response<ContestRulesDTO> response) {
+                numberOfQuestions = response.body().getNumQuestions();
+                            }
+
+            @Override
+            public void onFailure(Call<ContestRulesDTO> call, Throwable t) {
+
+            }
+        });
+        return numberOfQuestions;
 
     }
 
@@ -211,6 +240,7 @@ public class ContestCreationActivity extends AppCompatActivity {
         Timestamp endTime = new Timestamp(Timestamp.valueOf(str).getTime()+Integer.parseInt(duration.getText().toString())*60*1000);
         contest.setEndDate(endTime);
         contest.setQuestionVisibilityDuration(21);
+        contest.setNumberOfQuestions(getNumberOfQuestions());
         return contest;
     }
     public void addListenerOnButton() {
